@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA1AE5FD144BBD80008C4859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1AE5FC144BBD80008C4859 /* UIKit.framework */; };
+		AA1AE5FF144BBD80008C4859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1AE5FE144BBD80008C4859 /* Foundation.framework */; };
+		AA1AE601144BBD80008C4859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1AE600144BBD80008C4859 /* CoreGraphics.framework */; };
+		AA1AE607144BBD80008C4859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA1AE605144BBD80008C4859 /* InfoPlist.strings */; };
+		AA1AE609144BBD80008C4859 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE608144BBD80008C4859 /* main.m */; };
+		AA1AE60D144BBD80008C4859 /* FPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE60C144BBD80008C4859 /* FPAppDelegate.m */; };
+		AA1AE610144BBD80008C4859 /* FPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE60F144BBD80008C4859 /* FPViewController.m */; };
+		AA1AE613144BBD80008C4859 /* FPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AE611144BBD80008C4859 /* FPViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA1AE5F8144BBD80008C4859 /* FaustPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaustPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1AE5FC144BBD80008C4859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AA1AE5FE144BBD80008C4859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA1AE600144BBD80008C4859 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AA1AE604144BBD80008C4859 /* FaustPad-Info.plist */ = {isa = PBXFileReference; path = "FaustPad-Info.plist"; sourceTree = "<group>"; };
+		AA1AE606144BBD80008C4859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA1AE608144BBD80008C4859 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA1AE60A144BBD80008C4859 /* FaustPad-Prefix.pch */ = {isa = PBXFileReference; path = "FaustPad-Prefix.pch"; sourceTree = "<group>"; };
+		AA1AE60B144BBD80008C4859 /* FPAppDelegate.h */ = {isa = PBXFileReference; path = FPAppDelegate.h; sourceTree = "<group>"; };
+		AA1AE60C144BBD80008C4859 /* FPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPAppDelegate.m; sourceTree = "<group>"; };
+		AA1AE60E144BBD80008C4859 /* FPViewController.h */ = {isa = PBXFileReference; path = FPViewController.h; sourceTree = "<group>"; };
+		AA1AE60F144BBD80008C4859 /* FPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPViewController.m; sourceTree = "<group>"; };
+		AA1AE612144BBD80008C4859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA1AE5F5144BBD80008C4859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1AE5FD144BBD80008C4859 /* UIKit.framework in Frameworks */,
+				AA1AE5FF144BBD80008C4859 /* Foundation.framework in Frameworks */,
+				AA1AE601144BBD80008C4859 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA1AE5ED144BBD7F008C4859 = {
+			isa = PBXGroup;
+			children = (
+				AA1AE602144BBD80008C4859 /* FaustPad */,
+				AA1AE5FB144BBD80008C4859 /* Frameworks */,
+				AA1AE5F9144BBD80008C4859 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA1AE5F9144BBD80008C4859 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA1AE5F8144BBD80008C4859 /* FaustPad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA1AE5FB144BBD80008C4859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA1AE5FC144BBD80008C4859 /* UIKit.framework */,
+				AA1AE5FE144BBD80008C4859 /* Foundation.framework */,
+				AA1AE600144BBD80008C4859 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA1AE602144BBD80008C4859 /* FaustPad */ = {
+			isa = PBXGroup;
+			children = (
+				AA1AE60B144BBD80008C4859 /* FPAppDelegate.h */,
+				AA1AE60C144BBD80008C4859 /* FPAppDelegate.m */,
+				AA1AE60E144BBD80008C4859 /* FPViewController.h */,
+				AA1AE60F144BBD80008C4859 /* FPViewController.m */,
+				AA1AE611144BBD80008C4859 /* FPViewController.xib */,
+				AA1AE603144BBD80008C4859 /* Supporting Files */,
+			);
+			path = FaustPad;
+			sourceTree = "<group>";
+		};
+		AA1AE603144BBD80008C4859 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA1AE604144BBD80008C4859 /* FaustPad-Info.plist */,
+				AA1AE605144BBD80008C4859 /* InfoPlist.strings */,
+				AA1AE608144BBD80008C4859 /* main.m */,
+				AA1AE60A144BBD80008C4859 /* FaustPad-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA1AE5F7144BBD80008C4859 /* FaustPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA1AE616144BBD80008C4859 /* Build configuration list for PBXNativeTarget "FaustPad" */;
+			buildPhases = (
+				AA1AE5F4144BBD80008C4859 /* Sources */,
+				AA1AE5F5144BBD80008C4859 /* Frameworks */,
+				AA1AE5F6144BBD80008C4859 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaustPad;
+			productName = FaustPad;
+			productReference = AA1AE5F8144BBD80008C4859 /* FaustPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA1AE5EF144BBD7F008C4859 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Stanford University";
+			};
+			buildConfigurationList = AA1AE5F2144BBD7F008C4859 /* Build configuration list for PBXProject "FaustPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA1AE5ED144BBD7F008C4859;
+			productRefGroup = AA1AE5F9144BBD80008C4859 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA1AE5F7144BBD80008C4859 /* FaustPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA1AE5F6144BBD80008C4859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1AE607144BBD80008C4859 /* InfoPlist.strings in Resources */,
+				AA1AE613144BBD80008C4859 /* FPViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA1AE5F4144BBD80008C4859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1AE609144BBD80008C4859 /* main.m in Sources */,
+				AA1AE60D144BBD80008C4859 /* FPAppDelegate.m in Sources */,
+				AA1AE610144BBD80008C4859 /* FPViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA1AE605144BBD80008C4859 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA1AE606144BBD80008C4859 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA1AE611144BBD80008C4859 /* FPViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA1AE612144BBD80008C4859 /* en */,
+			);
+			name = FPViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA1AE614144BBD80008C4859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AA1AE615144BBD80008C4859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA1AE617144BBD80008C4859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaustPad/FaustPad-Prefix.pch";
+				INFOPLIST_FILE = "FaustPad/FaustPad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA1AE618144BBD80008C4859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaustPad/FaustPad-Prefix.pch";
+				INFOPLIST_FILE = "FaustPad/FaustPad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA1AE5F2144BBD7F008C4859 /* Build configuration list for PBXProject "FaustPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA1AE614144BBD80008C4859 /* Debug */,
+				AA1AE615144BBD80008C4859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA1AE616144BBD80008C4859 /* Build configuration list for PBXNativeTarget "FaustPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA1AE617144BBD80008C4859 /* Debug */,
+				AA1AE618144BBD80008C4859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA1AE5EF144BBD7F008C4859 /* Project object */;
+}
