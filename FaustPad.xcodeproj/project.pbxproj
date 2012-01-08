@@ -12,9 +12,29 @@
 		AA1AE601144BBD80008C4859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1AE600144BBD80008C4859 /* CoreGraphics.framework */; };
 		AA1AE607144BBD80008C4859 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA1AE605144BBD80008C4859 /* InfoPlist.strings */; };
 		AA1AE609144BBD80008C4859 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE608144BBD80008C4859 /* main.m */; };
-		AA1AE60D144BBD80008C4859 /* FPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE60C144BBD80008C4859 /* FPAppDelegate.m */; };
-		AA1AE610144BBD80008C4859 /* FPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE60F144BBD80008C4859 /* FPViewController.m */; };
+		AA1AE60D144BBD80008C4859 /* FPAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE60C144BBD80008C4859 /* FPAppDelegate.mm */; };
+		AA1AE610144BBD80008C4859 /* FPViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE60F144BBD80008C4859 /* FPViewController.mm */; };
 		AA1AE613144BBD80008C4859 /* FPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AE611144BBD80008C4859 /* FPViewController.xib */; };
+		AA1AE620144BE398008C4859 /* DspXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE61F144BE398008C4859 /* DspXmlParser.m */; };
+		AA5A5728145E4C510039B313 /* mo_net.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA5A5725145E4C510039B313 /* mo_net.mm */; };
+		AA5A5742145E4C700039B313 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A572C145E4C700039B313 /* IpEndpointName.cpp */; };
+		AA5A5743145E4C700039B313 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A5731145E4C700039B313 /* NetworkingUtils.cpp */; };
+		AA5A5744145E4C700039B313 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A5732145E4C700039B313 /* UdpSocket.cpp */; };
+		AA5A5745145E4C700039B313 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A5739145E4C700039B313 /* OscOutboundPacketStream.cpp */; };
+		AA5A5746145E4C700039B313 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A573C145E4C700039B313 /* OscPrintReceivedElements.cpp */; };
+		AA5A5747145E4C700039B313 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A573E145E4C700039B313 /* OscReceivedElements.cpp */; };
+		AA5A5748145E4C700039B313 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A5740145E4C700039B313 /* OscTypes.cpp */; };
+		AA5A574C145E4CBA0039B313 /* mo_thread.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA5A574B145E4CBA0039B313 /* mo_thread.mm */; };
+		AA75997B14566BE300DAA23E /* FPUIButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA75997A14566BE300DAA23E /* FPUIButton.mm */; };
+		AA75997E145674E100DAA23E /* FPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75997D145674E100DAA23E /* FPGroup.m */; };
+		AA759994145689BD00DAA23E /* FPUINumEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA759993145689BD00DAA23E /* FPUINumEntry.mm */; };
+		AA8C16DF1456018B000D64D9 /* FPUIComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C16DE1456018B000D64D9 /* FPUIComponent.m */; };
+		AA8C16E2145601FD000D64D9 /* FPUIHSlider.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */; };
+		AAC36CC31450F79300C16EC1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC36CC21450F79300C16EC1 /* libz.dylib */; };
+		AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC36CD91450FBBD00C16EC1 /* icon72.png */; };
+		AAD7B51C1460F3B1007B1931 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7B51B1460F3B1007B1931 /* ServerData.m */; };
+		AAF9BAD51450F15B005EF714 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAF9BAD61450F15B005EF714 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF9BAD41450F15B005EF714 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +42,60 @@
 		AA1AE5FC144BBD80008C4859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA1AE5FE144BBD80008C4859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA1AE600144BBD80008C4859 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AA1AE604144BBD80008C4859 /* FaustPad-Info.plist */ = {isa = PBXFileReference; path = "FaustPad-Info.plist"; sourceTree = "<group>"; };
+		AA1AE604144BBD80008C4859 /* FaustPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FaustPad-Info.plist"; sourceTree = "<group>"; };
 		AA1AE606144BBD80008C4859 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA1AE608144BBD80008C4859 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AA1AE60A144BBD80008C4859 /* FaustPad-Prefix.pch */ = {isa = PBXFileReference; path = "FaustPad-Prefix.pch"; sourceTree = "<group>"; };
-		AA1AE60B144BBD80008C4859 /* FPAppDelegate.h */ = {isa = PBXFileReference; path = FPAppDelegate.h; sourceTree = "<group>"; };
-		AA1AE60C144BBD80008C4859 /* FPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPAppDelegate.m; sourceTree = "<group>"; };
-		AA1AE60E144BBD80008C4859 /* FPViewController.h */ = {isa = PBXFileReference; path = FPViewController.h; sourceTree = "<group>"; };
-		AA1AE60F144BBD80008C4859 /* FPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPViewController.m; sourceTree = "<group>"; };
+		AA1AE60A144BBD80008C4859 /* FaustPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaustPad-Prefix.pch"; sourceTree = "<group>"; };
+		AA1AE60B144BBD80008C4859 /* FPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPAppDelegate.h; sourceTree = "<group>"; };
+		AA1AE60C144BBD80008C4859 /* FPAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FPAppDelegate.mm; sourceTree = "<group>"; };
+		AA1AE60E144BBD80008C4859 /* FPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPViewController.h; sourceTree = "<group>"; };
+		AA1AE60F144BBD80008C4859 /* FPViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FPViewController.mm; sourceTree = "<group>"; };
 		AA1AE612144BBD80008C4859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPViewController.xib; sourceTree = "<group>"; };
+		AA1AE61E144BE398008C4859 /* DspXmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DspXmlParser.h; sourceTree = "<group>"; };
+		AA1AE61F144BE398008C4859 /* DspXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DspXmlParser.m; sourceTree = "<group>"; };
+		AA5A5724145E4C510039B313 /* mo_net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_net.h; path = Ext/Momu/mo_net.h; sourceTree = "<group>"; };
+		AA5A5725145E4C510039B313 /* mo_net.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_net.mm; path = Ext/Momu/mo_net.mm; sourceTree = "<group>"; };
+		AA5A572C145E4C700039B313 /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
+		AA5A572D145E4C700039B313 /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
+		AA5A572E145E4C700039B313 /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
+		AA5A572F145E4C700039B313 /* PacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketListener.h; sourceTree = "<group>"; };
+		AA5A5731145E4C700039B313 /* NetworkingUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkingUtils.cpp; sourceTree = "<group>"; };
+		AA5A5732145E4C700039B313 /* UdpSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSocket.cpp; sourceTree = "<group>"; };
+		AA5A5733145E4C700039B313 /* TimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListener.h; sourceTree = "<group>"; };
+		AA5A5734145E4C700039B313 /* UdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSocket.h; sourceTree = "<group>"; };
+		AA5A5736145E4C700039B313 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMappingOscPacketListener.h; sourceTree = "<group>"; };
+		AA5A5737145E4C700039B313 /* OscException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscException.h; sourceTree = "<group>"; };
+		AA5A5738145E4C700039B313 /* OscHostEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHostEndianness.h; sourceTree = "<group>"; };
+		AA5A5739145E4C700039B313 /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscOutboundPacketStream.cpp; sourceTree = "<group>"; };
+		AA5A573A145E4C700039B313 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutboundPacketStream.h; sourceTree = "<group>"; };
+		AA5A573B145E4C700039B313 /* OscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPacketListener.h; sourceTree = "<group>"; };
+		AA5A573C145E4C700039B313 /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscPrintReceivedElements.cpp; sourceTree = "<group>"; };
+		AA5A573D145E4C700039B313 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPrintReceivedElements.h; sourceTree = "<group>"; };
+		AA5A573E145E4C700039B313 /* OscReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscReceivedElements.cpp; sourceTree = "<group>"; };
+		AA5A573F145E4C700039B313 /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
+		AA5A5740145E4C700039B313 /* OscTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
+		AA5A5741145E4C700039B313 /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
+		AA5A5749145E4CBA0039B313 /* mo_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_def.h; path = Ext/Momu/mo_def.h; sourceTree = "<group>"; };
+		AA5A574A145E4CBA0039B313 /* mo_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_thread.h; path = Ext/Momu/mo_thread.h; sourceTree = "<group>"; };
+		AA5A574B145E4CBA0039B313 /* mo_thread.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_thread.mm; path = Ext/Momu/mo_thread.mm; sourceTree = "<group>"; };
+		AA75997914566BE300DAA23E /* FPUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIButton.h; path = "UI Components/FPUIButton.h"; sourceTree = "<group>"; };
+		AA75997A14566BE300DAA23E /* FPUIButton.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUIButton.mm; path = "UI Components/FPUIButton.mm"; sourceTree = "<group>"; };
+		AA75997C145674E100DAA23E /* FPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPGroup.h; path = "UI Components/FPGroup.h"; sourceTree = "<group>"; };
+		AA75997D145674E100DAA23E /* FPGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPGroup.m; path = "UI Components/FPGroup.m"; sourceTree = "<group>"; };
+		AA759993145689BD00DAA23E /* FPUINumEntry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUINumEntry.mm; path = "UI Components/FPUINumEntry.mm"; sourceTree = "<group>"; };
+		AA75999514568B5E00DAA23E /* FPUINumEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUINumEntry.h; path = "UI Components/FPUINumEntry.h"; sourceTree = "<group>"; };
+		AA8C16DD1456018B000D64D9 /* FPUIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIComponent.h; path = "UI Components/FPUIComponent.h"; sourceTree = "<group>"; };
+		AA8C16DE1456018B000D64D9 /* FPUIComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPUIComponent.m; path = "UI Components/FPUIComponent.m"; sourceTree = "<group>"; };
+		AA8C16E0145601FD000D64D9 /* FPUIHSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIHSlider.h; path = "UI Components/FPUIHSlider.h"; sourceTree = "<group>"; };
+		AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUIHSlider.mm; path = "UI Components/FPUIHSlider.mm"; sourceTree = "<group>"; };
+		AAC36CC21450F79300C16EC1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AAC36CD91450FBBD00C16EC1 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
+		AAD7B51A1460F3B1007B1931 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
+		AAD7B51B1460F3B1007B1931 /* ServerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerData.m; sourceTree = "<group>"; };
+		AAF9BAD11450F15B005EF714 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		AAF9BAD31450F15B005EF714 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		AAF9BAD41450F15B005EF714 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC36CC31450F79300C16EC1 /* libz.dylib in Frameworks */,
 				AA1AE5FD144BBD80008C4859 /* UIKit.framework in Frameworks */,
 				AA1AE5FF144BBD80008C4859 /* Foundation.framework in Frameworks */,
 				AA1AE601144BBD80008C4859 /* CoreGraphics.framework in Frameworks */,
@@ -50,9 +116,11 @@
 		AA1AE5ED144BBD7F008C4859 = {
 			isa = PBXGroup;
 			children = (
+				AAC36CD91450FBBD00C16EC1 /* icon72.png */,
 				AA1AE602144BBD80008C4859 /* FaustPad */,
 				AA1AE5FB144BBD80008C4859 /* Frameworks */,
 				AA1AE5F9144BBD80008C4859 /* Products */,
+				AAC36CC21450F79300C16EC1 /* libz.dylib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,10 +145,13 @@
 		AA1AE602144BBD80008C4859 /* FaustPad */ = {
 			isa = PBXGroup;
 			children = (
+				AAF9BAB51450EDC1005EF714 /* Ext */,
+				AA8C16DC1455FB30000D64D9 /* UI Components */,
+				AA1AE61D144BE354008C4859 /* Utilities */,
 				AA1AE60B144BBD80008C4859 /* FPAppDelegate.h */,
-				AA1AE60C144BBD80008C4859 /* FPAppDelegate.m */,
+				AA1AE60C144BBD80008C4859 /* FPAppDelegate.mm */,
 				AA1AE60E144BBD80008C4859 /* FPViewController.h */,
-				AA1AE60F144BBD80008C4859 /* FPViewController.m */,
+				AA1AE60F144BBD80008C4859 /* FPViewController.mm */,
 				AA1AE611144BBD80008C4859 /* FPViewController.xib */,
 				AA1AE603144BBD80008C4859 /* Supporting Files */,
 			);
@@ -96,6 +167,120 @@
 				AA1AE60A144BBD80008C4859 /* FaustPad-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA1AE61D144BE354008C4859 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AA1AE61E144BE398008C4859 /* DspXmlParser.h */,
+				AA1AE61F144BE398008C4859 /* DspXmlParser.m */,
+				AAD7B51A1460F3B1007B1931 /* ServerData.h */,
+				AAD7B51B1460F3B1007B1931 /* ServerData.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		AA5A5722145E4C450039B313 /* Momu */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A5749145E4CBA0039B313 /* mo_def.h */,
+				AA5A574A145E4CBA0039B313 /* mo_thread.h */,
+				AA5A574B145E4CBA0039B313 /* mo_thread.mm */,
+				AA5A5724145E4C510039B313 /* mo_net.h */,
+				AA5A5725145E4C510039B313 /* mo_net.mm */,
+			);
+			name = Momu;
+			sourceTree = "<group>";
+		};
+		AA5A572A145E4C700039B313 /* oscpack */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A572B145E4C700039B313 /* ip */,
+				AA5A5735145E4C700039B313 /* osc */,
+			);
+			name = oscpack;
+			path = Ext/oscpack;
+			sourceTree = "<group>";
+		};
+		AA5A572B145E4C700039B313 /* ip */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A572C145E4C700039B313 /* IpEndpointName.cpp */,
+				AA5A572D145E4C700039B313 /* IpEndpointName.h */,
+				AA5A572E145E4C700039B313 /* NetworkingUtils.h */,
+				AA5A572F145E4C700039B313 /* PacketListener.h */,
+				AA5A5730145E4C700039B313 /* posix */,
+				AA5A5733145E4C700039B313 /* TimerListener.h */,
+				AA5A5734145E4C700039B313 /* UdpSocket.h */,
+			);
+			path = ip;
+			sourceTree = "<group>";
+		};
+		AA5A5730145E4C700039B313 /* posix */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A5731145E4C700039B313 /* NetworkingUtils.cpp */,
+				AA5A5732145E4C700039B313 /* UdpSocket.cpp */,
+			);
+			path = posix;
+			sourceTree = "<group>";
+		};
+		AA5A5735145E4C700039B313 /* osc */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A5736145E4C700039B313 /* MessageMappingOscPacketListener.h */,
+				AA5A5737145E4C700039B313 /* OscException.h */,
+				AA5A5738145E4C700039B313 /* OscHostEndianness.h */,
+				AA5A5739145E4C700039B313 /* OscOutboundPacketStream.cpp */,
+				AA5A573A145E4C700039B313 /* OscOutboundPacketStream.h */,
+				AA5A573B145E4C700039B313 /* OscPacketListener.h */,
+				AA5A573C145E4C700039B313 /* OscPrintReceivedElements.cpp */,
+				AA5A573D145E4C700039B313 /* OscPrintReceivedElements.h */,
+				AA5A573E145E4C700039B313 /* OscReceivedElements.cpp */,
+				AA5A573F145E4C700039B313 /* OscReceivedElements.h */,
+				AA5A5740145E4C700039B313 /* OscTypes.cpp */,
+				AA5A5741145E4C700039B313 /* OscTypes.h */,
+			);
+			path = osc;
+			sourceTree = "<group>";
+		};
+		AA8C16DC1455FB30000D64D9 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				AA8C16DD1456018B000D64D9 /* FPUIComponent.h */,
+				AA8C16DE1456018B000D64D9 /* FPUIComponent.m */,
+				AA8C16E0145601FD000D64D9 /* FPUIHSlider.h */,
+				AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */,
+				AA75997914566BE300DAA23E /* FPUIButton.h */,
+				AA75997A14566BE300DAA23E /* FPUIButton.mm */,
+				AA75997C145674E100DAA23E /* FPGroup.h */,
+				AA75997D145674E100DAA23E /* FPGroup.m */,
+				AA75999514568B5E00DAA23E /* FPUINumEntry.h */,
+				AA759993145689BD00DAA23E /* FPUINumEntry.mm */,
+			);
+			name = "UI Components";
+			sourceTree = "<group>";
+		};
+		AAF9BAB51450EDC1005EF714 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A572A145E4C700039B313 /* oscpack */,
+				AA5A5722145E4C450039B313 /* Momu */,
+				AAF9BAD01450F15B005EF714 /* TBXML */,
+			);
+			name = Ext;
+			sourceTree = "<group>";
+		};
+		AAF9BAD01450F15B005EF714 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				AAF9BAD11450F15B005EF714 /* NSDataAdditions.h */,
+				AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */,
+				AAF9BAD31450F15B005EF714 /* TBXML.h */,
+				AAF9BAD41450F15B005EF714 /* TBXML.m */,
+			);
+			name = TBXML;
+			path = Ext/TBXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +336,7 @@
 			files = (
 				AA1AE607144BBD80008C4859 /* InfoPlist.strings in Resources */,
 				AA1AE613144BBD80008C4859 /* FPViewController.xib in Resources */,
+				AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +348,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1AE609144BBD80008C4859 /* main.m in Sources */,
-				AA1AE60D144BBD80008C4859 /* FPAppDelegate.m in Sources */,
-				AA1AE610144BBD80008C4859 /* FPViewController.m in Sources */,
+				AA1AE60D144BBD80008C4859 /* FPAppDelegate.mm in Sources */,
+				AA1AE610144BBD80008C4859 /* FPViewController.mm in Sources */,
+				AA1AE620144BE398008C4859 /* DspXmlParser.m in Sources */,
+				AAF9BAD51450F15B005EF714 /* NSDataAdditions.m in Sources */,
+				AAF9BAD61450F15B005EF714 /* TBXML.m in Sources */,
+				AA8C16DF1456018B000D64D9 /* FPUIComponent.m in Sources */,
+				AA8C16E2145601FD000D64D9 /* FPUIHSlider.mm in Sources */,
+				AA75997B14566BE300DAA23E /* FPUIButton.mm in Sources */,
+				AA75997E145674E100DAA23E /* FPGroup.m in Sources */,
+				AA759994145689BD00DAA23E /* FPUINumEntry.mm in Sources */,
+				AA5A5728145E4C510039B313 /* mo_net.mm in Sources */,
+				AA5A5742145E4C700039B313 /* IpEndpointName.cpp in Sources */,
+				AA5A5743145E4C700039B313 /* NetworkingUtils.cpp in Sources */,
+				AA5A5744145E4C700039B313 /* UdpSocket.cpp in Sources */,
+				AA5A5745145E4C700039B313 /* OscOutboundPacketStream.cpp in Sources */,
+				AA5A5746145E4C700039B313 /* OscPrintReceivedElements.cpp in Sources */,
+				AA5A5747145E4C700039B313 /* OscReceivedElements.cpp in Sources */,
+				AA5A5748145E4C700039B313 /* OscTypes.cpp in Sources */,
+				AA5A574C145E4CBA0039B313 /* mo_thread.mm in Sources */,
+				AAD7B51C1460F3B1007B1931 /* ServerData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +410,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -225,7 +429,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -242,7 +446,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaustPad/FaustPad-Prefix.pch";
 				INFOPLIST_FILE = "FaustPad/FaustPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -253,7 +459,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaustPad/FaustPad-Prefix.pch";
 				INFOPLIST_FILE = "FaustPad/FaustPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -277,6 +485,7 @@
 				AA1AE618144BBD80008C4859 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
