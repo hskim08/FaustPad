@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TBXML.h"
 
-#import "FPGroup.h"
+#import "FPUIGroup.h"
 
 @interface DspXmlParser : NSObject {
     TBXML* _tbXml;
@@ -41,7 +41,7 @@
 
 - (void) parseGroup:(TBXMLElement*)element view:(UIView*)view;
 
-- (void) parseGroup:(TBXMLElement*)element group:(FPGroup*)parent;
-- (void) parseWidgetRef:(TBXMLElement*)element group:(FPGroup*)parent;
+- (void) parseGroup:(TBXMLElement*)element group:(FPUIGroup*)parent;
+- (void) parseWidgetRef:(TBXMLElement*)element group:(FPUIGroup*)parent;
 
 @end

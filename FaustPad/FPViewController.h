@@ -11,12 +11,13 @@
 #import "mo_net.h"
 #import "DspXmlParser.h"
 
-@interface FPViewController : UIViewController {
+@interface FPViewController : UIViewController<UITextFieldDelegate> {
     
     DspXmlParser* dspXmlParser;
 }
 
 @property (nonatomic, strong) UIScrollView* scrollView;
 @property (nonatomic, strong) UITextField* ipText;
+@property (nonatomic, strong) UITextField* nodeText;
 
 @end

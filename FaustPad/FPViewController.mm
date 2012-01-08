@@ -29,6 +29,7 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
 
 @synthesize scrollView;
 @synthesize ipText;
+@synthesize nodeText;
 
 - (void)didReceiveMemoryWarning
 {
@@ -45,11 +46,39 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
     // initialize mo_net
     [self initMoNet];
     
+    // add IP input
+    UILabel* ipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, 25)];
+    ipLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    ipLabel.textColor = [UIColor lightGrayColor];
+    ipLabel.text = @"IP: ";
+    [self.view addSubview:ipLabel];
     
+    ipText = [[UITextField alloc] initWithFrame:CGRectMake(30, 0, self.view.frame.size.width/4-30, 25)];
+    ipText.clearButtonMode = UITextFieldViewModeWhileEditing;
+    ipText.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    ipText.backgroundColor = [UIColor whiteColor];
+    ipText.text = [ServerData sharedInstance].serverIp;
+    ipText.delegate = self;
+    [self.view addSubview:ipText];
+    
+    // add node input
+    UILabel* nodeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 0, 75, 25)];
+    nodeLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    nodeLabel.textColor = [UIColor lightGrayColor];
+    nodeLabel.text = @"NodeID: ";
+    [self.view addSubview:nodeLabel];
+    
+    nodeText = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4+75, 0, self.view.frame.size.width/4-75, 25)];
+    nodeText.clearButtonMode = UITextFieldViewModeWhileEditing;
+    nodeText.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    nodeText.backgroundColor = [UIColor whiteColor];
+    nodeText.text = [NSString stringWithFormat:@"%d", [ServerData sharedInstance].nodeId];
+    nodeText.delegate = self;
+    [self.view addSubview:nodeText];
     
     // create scroll view
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, 
-                                                                self.view.frame.origin.y, 
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 
+                                                                25, 
                                                                 self.view.frame.size.width, 
                                                                 self.view.frame.size.height)];
     
@@ -96,6 +125,25 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
+    return YES;
+}
+
+
+#pragma mark UITextFieldDelegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    // TODO: validate inputs
+    
+    if (textField == ipText) [ServerData sharedInstance].serverIp = textField.text;
+    if (textField == nodeText) [ServerData sharedInstance].nodeId = [textField.text intValue]; 
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // hide keyboard
+    [textField resignFirstResponder];
+    
     return YES;
 }
 

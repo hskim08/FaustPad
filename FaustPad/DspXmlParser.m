@@ -222,10 +222,10 @@
 {
     NSLog(@"view frame: %f/%f/%f/%f", view.frame.origin.x, view.frame.origin.y, view.frame.size.width, view.frame.size.height);
     // create group
-    FPGroup* group = [[FPGroup alloc] initWithFrame:CGRectMake(0, 
+    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
                                                                0, 
                                                                0, 
-                                                               FP_GROUP_LABEL_HEIGHT)];
+                                                               FPUI_GROUP_LABEL_HEIGHT)];
     
     // get type
     NSString* type = [TBXML attributeValue:element->firstAttribute];
@@ -255,13 +255,13 @@
 
 
 // parses <group> to add to FPGroup
-- (void) parseGroup:(TBXMLElement*)element group:(FPGroup*)parent
+- (void) parseGroup:(TBXMLElement*)element group:(FPUIGroup*)parent
 {
     // create group
-    FPGroup* group = [[FPGroup alloc] initWithFrame:CGRectMake(0, 
+    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
                                                                0, 
                                                                0, 
-                                                               FP_GROUP_LABEL_HEIGHT)];
+                                                               FPUI_GROUP_LABEL_HEIGHT)];
     
     // get type
     NSString* type = [TBXML attributeValue:element->firstAttribute];
@@ -289,7 +289,7 @@
     [parent addComponent:group];
 }
              
-- (void) parseWidgetRef:(TBXMLElement*)element group:(FPGroup*)parent
+- (void) parseWidgetRef:(TBXMLElement*)element group:(FPUIGroup*)parent
 {
     NSInteger cid = [TBXML attributeValue:element->firstAttribute].integerValue;
     

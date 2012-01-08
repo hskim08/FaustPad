@@ -26,13 +26,15 @@
 		AA5A5748145E4C700039B313 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A5740145E4C700039B313 /* OscTypes.cpp */; };
 		AA5A574C145E4CBA0039B313 /* mo_thread.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA5A574B145E4CBA0039B313 /* mo_thread.mm */; };
 		AA75997B14566BE300DAA23E /* FPUIButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA75997A14566BE300DAA23E /* FPUIButton.mm */; };
-		AA75997E145674E100DAA23E /* FPGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75997D145674E100DAA23E /* FPGroup.m */; };
+		AA75997E145674E100DAA23E /* FPUIGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75997D145674E100DAA23E /* FPUIGroup.m */; };
 		AA759994145689BD00DAA23E /* FPUINumEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA759993145689BD00DAA23E /* FPUINumEntry.mm */; };
 		AA8C16DF1456018B000D64D9 /* FPUIComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C16DE1456018B000D64D9 /* FPUIComponent.m */; };
 		AA8C16E2145601FD000D64D9 /* FPUIHSlider.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */; };
 		AAC36CC31450F79300C16EC1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC36CC21450F79300C16EC1 /* libz.dylib */; };
 		AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC36CD91450FBBD00C16EC1 /* icon72.png */; };
 		AAD7B51C1460F3B1007B1931 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7B51B1460F3B1007B1931 /* ServerData.m */; };
+		AAE178E314B9BA2D00A36ABE /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE178E214B9BA2D00A36ABE /* icon114.png */; };
+		AAE178E514B9BA6B00A36ABE /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE178E414B9BA6B00A36ABE /* icon57.png */; };
 		AAF9BAD51450F15B005EF714 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AAF9BAD61450F15B005EF714 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF9BAD41450F15B005EF714 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
@@ -80,8 +82,8 @@
 		AA5A574B145E4CBA0039B313 /* mo_thread.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_thread.mm; path = Ext/Momu/mo_thread.mm; sourceTree = "<group>"; };
 		AA75997914566BE300DAA23E /* FPUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIButton.h; path = "UI Components/FPUIButton.h"; sourceTree = "<group>"; };
 		AA75997A14566BE300DAA23E /* FPUIButton.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUIButton.mm; path = "UI Components/FPUIButton.mm"; sourceTree = "<group>"; };
-		AA75997C145674E100DAA23E /* FPGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPGroup.h; path = "UI Components/FPGroup.h"; sourceTree = "<group>"; };
-		AA75997D145674E100DAA23E /* FPGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPGroup.m; path = "UI Components/FPGroup.m"; sourceTree = "<group>"; };
+		AA75997C145674E100DAA23E /* FPUIGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIGroup.h; path = "UI Components/FPUIGroup.h"; sourceTree = "<group>"; };
+		AA75997D145674E100DAA23E /* FPUIGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPUIGroup.m; path = "UI Components/FPUIGroup.m"; sourceTree = "<group>"; };
 		AA759993145689BD00DAA23E /* FPUINumEntry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUINumEntry.mm; path = "UI Components/FPUINumEntry.mm"; sourceTree = "<group>"; };
 		AA75999514568B5E00DAA23E /* FPUINumEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUINumEntry.h; path = "UI Components/FPUINumEntry.h"; sourceTree = "<group>"; };
 		AA8C16DD1456018B000D64D9 /* FPUIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIComponent.h; path = "UI Components/FPUIComponent.h"; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		AAC36CD91450FBBD00C16EC1 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		AAD7B51A1460F3B1007B1931 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
 		AAD7B51B1460F3B1007B1931 /* ServerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerData.m; sourceTree = "<group>"; };
+		AAE178E214B9BA2D00A36ABE /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
+		AAE178E414B9BA6B00A36ABE /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
 		AAF9BAD11450F15B005EF714 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		AAF9BAD31450F15B005EF714 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		AA1AE5ED144BBD7F008C4859 = {
 			isa = PBXGroup;
 			children = (
+				AAE178E414B9BA6B00A36ABE /* icon57.png */,
+				AAE178E214B9BA2D00A36ABE /* icon114.png */,
 				AAC36CD91450FBBD00C16EC1 /* icon72.png */,
 				AA1AE602144BBD80008C4859 /* FaustPad */,
 				AA1AE5FB144BBD80008C4859 /* Frameworks */,
@@ -253,8 +259,8 @@
 				AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */,
 				AA75997914566BE300DAA23E /* FPUIButton.h */,
 				AA75997A14566BE300DAA23E /* FPUIButton.mm */,
-				AA75997C145674E100DAA23E /* FPGroup.h */,
-				AA75997D145674E100DAA23E /* FPGroup.m */,
+				AA75997C145674E100DAA23E /* FPUIGroup.h */,
+				AA75997D145674E100DAA23E /* FPUIGroup.m */,
 				AA75999514568B5E00DAA23E /* FPUINumEntry.h */,
 				AA759993145689BD00DAA23E /* FPUINumEntry.mm */,
 			);
@@ -337,6 +343,8 @@
 				AA1AE607144BBD80008C4859 /* InfoPlist.strings in Resources */,
 				AA1AE613144BBD80008C4859 /* FPViewController.xib in Resources */,
 				AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */,
+				AAE178E314B9BA2D00A36ABE /* icon114.png in Resources */,
+				AAE178E514B9BA6B00A36ABE /* icon57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +364,7 @@
 				AA8C16DF1456018B000D64D9 /* FPUIComponent.m in Sources */,
 				AA8C16E2145601FD000D64D9 /* FPUIHSlider.mm in Sources */,
 				AA75997B14566BE300DAA23E /* FPUIButton.mm in Sources */,
-				AA75997E145674E100DAA23E /* FPGroup.m in Sources */,
+				AA75997E145674E100DAA23E /* FPUIGroup.m in Sources */,
 				AA759994145689BD00DAA23E /* FPUINumEntry.mm in Sources */,
 				AA5A5728145E4C510039B313 /* mo_net.mm in Sources */,
 				AA5A5742145E4C700039B313 /* IpEndpointName.cpp in Sources */,

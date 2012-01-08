@@ -31,7 +31,7 @@
         
         numEntry = [[UITextField alloc] initWithFrame:CGRectMake(0, frame.size.height-25, frame.size.width, 25)];
         numEntry.backgroundColor = [UIColor whiteColor];
-        numEntry.keyboardType = UIKeyboardTypeNumberPad;
+        numEntry.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
         numEntry.clearButtonMode = UITextFieldViewModeWhileEditing;
         numEntry.delegate = self;
         [self addSubview:numEntry];
@@ -69,7 +69,7 @@
                        std::string("/n_set"), 
                        types, 
                        3,
-                       1000,
+                       [ServerData sharedInstance].nodeId,
                        [[self labelToArg] cStringUsingEncoding:NSUTF8StringEncoding],
                        self.value
                        );

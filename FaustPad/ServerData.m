@@ -13,6 +13,7 @@ static ServerData *sharedInstance = nil;
 @implementation ServerData
 
 @synthesize serverIp;
+@synthesize nodeId;
 
 + (ServerData *)sharedInstance
 {
@@ -28,6 +29,7 @@ static ServerData *sharedInstance = nil;
     if ( self ) {
         
         serverIp = @"128.12.142.63";
+        nodeId = 1000;
     }
     return  self;
 }
