@@ -33,6 +33,7 @@
 		AAC36CC31450F79300C16EC1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC36CC21450F79300C16EC1 /* libz.dylib */; };
 		AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC36CD91450FBBD00C16EC1 /* icon72.png */; };
 		AAD7B51C1460F3B1007B1931 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7B51B1460F3B1007B1931 /* ServerData.m */; };
+		AADA6B1014BB9C6E00A2CFAD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADA6B0F14BB9C6E00A2CFAD /* QuartzCore.framework */; };
 		AAE178E314B9BA2D00A36ABE /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE178E214B9BA2D00A36ABE /* icon114.png */; };
 		AAE178E514B9BA6B00A36ABE /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE178E414B9BA6B00A36ABE /* icon57.png */; };
 		AAF9BAD51450F15B005EF714 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -94,6 +95,7 @@
 		AAC36CD91450FBBD00C16EC1 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		AAD7B51A1460F3B1007B1931 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
 		AAD7B51B1460F3B1007B1931 /* ServerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerData.m; sourceTree = "<group>"; };
+		AADA6B0F14BB9C6E00A2CFAD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AAE178E214B9BA2D00A36ABE /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
 		AAE178E414B9BA6B00A36ABE /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
 		AAF9BAD11450F15B005EF714 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				AA1AE5FD144BBD80008C4859 /* UIKit.framework in Frameworks */,
 				AA1AE5FF144BBD80008C4859 /* Foundation.framework in Frameworks */,
 				AA1AE601144BBD80008C4859 /* CoreGraphics.framework in Frameworks */,
+				AADA6B1014BB9C6E00A2CFAD /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,9 +123,6 @@
 		AA1AE5ED144BBD7F008C4859 = {
 			isa = PBXGroup;
 			children = (
-				AAE178E414B9BA6B00A36ABE /* icon57.png */,
-				AAE178E214B9BA2D00A36ABE /* icon114.png */,
-				AAC36CD91450FBBD00C16EC1 /* icon72.png */,
 				AA1AE602144BBD80008C4859 /* FaustPad */,
 				AA1AE5FB144BBD80008C4859 /* Frameworks */,
 				AA1AE5F9144BBD80008C4859 /* Products */,
@@ -141,6 +141,7 @@
 		AA1AE5FB144BBD80008C4859 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AADA6B0F14BB9C6E00A2CFAD /* QuartzCore.framework */,
 				AA1AE5FC144BBD80008C4859 /* UIKit.framework */,
 				AA1AE5FE144BBD80008C4859 /* Foundation.framework */,
 				AA1AE600144BBD80008C4859 /* CoreGraphics.framework */,
@@ -167,6 +168,7 @@
 		AA1AE603144BBD80008C4859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AADA6B1214BB9E8300A2CFAD /* Images */,
 				AA1AE604144BBD80008C4859 /* FaustPad-Info.plist */,
 				AA1AE605144BBD80008C4859 /* InfoPlist.strings */,
 				AA1AE608144BBD80008C4859 /* main.m */,
@@ -259,12 +261,23 @@
 				AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */,
 				AA75997914566BE300DAA23E /* FPUIButton.h */,
 				AA75997A14566BE300DAA23E /* FPUIButton.mm */,
-				AA75997C145674E100DAA23E /* FPUIGroup.h */,
-				AA75997D145674E100DAA23E /* FPUIGroup.m */,
 				AA75999514568B5E00DAA23E /* FPUINumEntry.h */,
 				AA759993145689BD00DAA23E /* FPUINumEntry.mm */,
+				AA75997C145674E100DAA23E /* FPUIGroup.h */,
+				AA75997D145674E100DAA23E /* FPUIGroup.m */,
 			);
 			name = "UI Components";
+			sourceTree = "<group>";
+		};
+		AADA6B1214BB9E8300A2CFAD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AAE178E414B9BA6B00A36ABE /* icon57.png */,
+				AAE178E214B9BA2D00A36ABE /* icon114.png */,
+				AAC36CD91450FBBD00C16EC1 /* icon72.png */,
+			);
+			name = Images;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AAF9BAB51450EDC1005EF714 /* Ext */ = {

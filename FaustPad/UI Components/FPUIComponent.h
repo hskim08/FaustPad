@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString* varname;
 
 - (NSString*) labelToArg;
+- (void) setMin:(double)minv max:(double)maxv; // virtual function
 
 @end

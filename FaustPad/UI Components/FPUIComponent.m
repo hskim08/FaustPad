@@ -30,6 +30,10 @@
     return [[label lowercaseString] stringByReplacingOccurrencesOfString:@" " withString:@"_"];
 }
 
+- (void) setMin:(double)minv max:(double)maxv
+{
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

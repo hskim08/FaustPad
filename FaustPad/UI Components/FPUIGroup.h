@@ -11,7 +11,7 @@
 #import "FPUIComponent.h"
 
 #define FPUI_GROUP_LABEL_HEIGHT 30
-#define FPUI_GROUP_INDENT 20
+#define FPUI_GROUP_INDENT 10
 
 @interface FPUIGroup : UIView
 

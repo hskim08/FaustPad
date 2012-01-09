@@ -23,6 +23,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
         entryLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height-50, frame.size.width, 25)];
         entryLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
@@ -31,6 +32,7 @@
         
         numEntry = [[UITextField alloc] initWithFrame:CGRectMake(0, frame.size.height-25, frame.size.width, 25)];
         numEntry.backgroundColor = [UIColor whiteColor];
+        numEntry.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         numEntry.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
         numEntry.clearButtonMode = UITextFieldViewModeWhileEditing;
         numEntry.delegate = self;
@@ -44,6 +46,12 @@
     [super setLabel:label];
     
     entryLabel.text = label;
+}
+
+- (void) setMin:(double)minv max:(double)maxv
+{
+    minValue = minv;
+    maxValue = maxv;
 }
 
 - (void) setValue:(double)v

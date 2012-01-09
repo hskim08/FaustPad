@@ -21,6 +21,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
         sliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-25)];
         sliderLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
@@ -30,7 +31,7 @@
         slider = [[UISlider alloc] initWithFrame:CGRectMake(0, frame.size.height-25, frame.size.width, 25)];
         [slider addTarget:self action:@selector(handleValueChanged:) forControlEvents:UIControlEventValueChanged];
         slider.multipleTouchEnabled = YES;
-//        slider.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        slider.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:slider];
     }
     return self;
@@ -41,6 +42,12 @@
     [super setLabel:label];
     
     sliderLabel.text = label;
+}
+
+- (void) setMin:(double)minv max:(double)maxv
+{
+    slider.minimumValue = minv;
+    slider.maximumValue = maxv;
 }
 
 std::map<std::string, UdpTransmitSocket *> m_cache;

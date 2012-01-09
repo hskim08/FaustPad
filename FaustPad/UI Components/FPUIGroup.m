@@ -8,6 +8,8 @@
 
 #import "FPUIGroup.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @implementation FPUIGroup
 
 @synthesize type;
@@ -18,14 +20,22 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        uiLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, FPUI_GROUP_LABEL_HEIGHT)];
-        uiLabel.backgroundColor = [UIColor lightGrayColor];
-        uiLabel.textColor = [UIColor darkGrayColor];
-        uiLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        [self addSubview:uiLabel];
+        // reset frame to zero height
+        self.frame = CGRectMake(0, 0, frame.size.width, FPUI_GROUP_LABEL_HEIGHT + 2*FPUI_GROUP_INDENT);
         
-//        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        
+        // add borders
+        self.layer.borderWidth = 3;
+        self.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        
+        // create label
+        uiLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, FPUI_GROUP_LABEL_HEIGHT)];
+        uiLabel.backgroundColor = [UIColor lightGrayColor];
+        uiLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        uiLabel.textColor = [UIColor darkGrayColor];
+        uiLabel.textAlignment = UITextAlignmentCenter;
+        [self addSubview:uiLabel];
     }
     return self;
 }
@@ -39,41 +49,54 @@
 - (void) addComponent:(UIView*)component
 {
     if ( [type isEqualToString:@"vgroup"] ) { // vertical layout - add height
-        // reposition component
+        
+        // configure sub component frame
         component.frame = CGRectMake(
-                                     0, 
-                                     self.frame.size.height, 
-                                     component.frame.size.width,
+                                     FPUI_GROUP_INDENT, 
+                                     self.frame.size.height - FPUI_GROUP_INDENT, 
+                                     self.frame.size.width - 2*FPUI_GROUP_INDENT,
                                      component.frame.size.height
                                      );
         
-        // resize frame
+        // configure frame
         self.frame = CGRectMake(
                                 0, 
                                 0, 
-                                fmax(self.frame.size.width, component.frame.size.width), 
-                                self.frame.size.height + component.frame.size.height);
+                                self.frame.size.width, 
+                                self.frame.size.height + component.frame.size.height
+                                );
+        
+        // add component as subview
+        [self addSubview:component];
+        
     }
     else {  // horizontal layout - split width
-        // reposition component
-        component.frame = CGRectMake(
-                                     self.frame.size.width, 
-                                     FPUI_GROUP_LABEL_HEIGHT, 
-                                     component.frame.size.width, 
-                                     component.frame.size.height
-                                     );
         
-        // resize frame
+        // add component as subview
+        [self addSubview:component];
+        
+        // configure sub component frame
+        int c = self.subviews.count;
+        
+        // reconfigure other sub components except the label
+        for (int i = 1; i < c; i++) {
+            UIView* view = [self.subviews objectAtIndex:i];
+            view.frame = CGRectMake(
+                                    (i-1)*(self.frame.size.width/(c-1)) + FPUI_GROUP_INDENT,
+                                    FPUI_GROUP_LABEL_HEIGHT + FPUI_GROUP_INDENT, 
+                                    self.frame.size.width/(c-1) - 2*FPUI_GROUP_INDENT,
+                                    view.frame.size.height
+                                    );
+        }
+        
+        // configure frame size
         self.frame = CGRectMake(
                                 0, 
                                 0, 
-                                self.frame.size.width + component.frame.size.width, 
-                                fmax(self.frame.size.height, component.frame.size.height+FPUI_GROUP_LABEL_HEIGHT)
+                                self.frame.size.width,
+                                fmax(self.frame.size.height, component.frame.size.height+FPUI_GROUP_LABEL_HEIGHT) + 2*FPUI_GROUP_INDENT
                                 );
     }
-    
-    // add component as subview
-    [self addSubview:component];
 }
 
 

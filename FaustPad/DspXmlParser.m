@@ -140,9 +140,9 @@
     slider.label = [TBXML textForElement:label];
     slider.varname = [TBXML textForElement:varname];
     
-    slider.slider.minimumValue = [TBXML textForElement:minValue].floatValue;
-    slider.slider.maximumValue = [TBXML textForElement:maxValue].floatValue;
-    slider.slider.value = [TBXML textForElement:initValue].floatValue;
+    [slider setMin:[TBXML textForElement:minValue].doubleValue 
+               max:[TBXML textForElement:maxValue].doubleValue];
+    slider.slider.value = [TBXML textForElement:initValue].doubleValue;
     
     NSLog(@"Created hslider(%@, %d) with (min/max/val): %.2f/%.2f/%.2f", 
           slider.label, cid, slider.slider.minimumValue, slider.slider.maximumValue, slider.slider.value);
@@ -185,11 +185,10 @@
     numEntry.label = [TBXML textForElement:label];
     numEntry.varname = [TBXML textForElement:varname];
     
-    numEntry.minValue = [[TBXML textForElement:minValue] doubleValue];
-    numEntry.maxValue = [[TBXML textForElement:maxValue] doubleValue];
-    numEntry.value = [[TBXML textForElement:initValue] doubleValue];
+    [numEntry setMin:[TBXML textForElement:minValue].doubleValue 
+                 max:[TBXML textForElement:maxValue].doubleValue];
+    numEntry.value = [TBXML textForElement:initValue].doubleValue;
     
-//    numEntry.numEntry.text = [NSString stringWithFormat:@"%.3f", numEntry.value];
     
     NSLog(@"Created numEntry (%@, %d)", numEntry.label, cid);
     
@@ -222,10 +221,11 @@
 {
     NSLog(@"view frame: %f/%f/%f/%f", view.frame.origin.x, view.frame.origin.y, view.frame.size.width, view.frame.size.height);
     // create group
-    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
-                                                               0, 
-                                                               0, 
-                                                               FPUI_GROUP_LABEL_HEIGHT)];
+    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:view.frame];
+//    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
+//                                                               0, 
+//                                                               0, 
+//                                                               FPUI_GROUP_LABEL_HEIGHT)];
     
     // get type
     NSString* type = [TBXML attributeValue:element->firstAttribute];
@@ -258,10 +258,11 @@
 - (void) parseGroup:(TBXMLElement*)element group:(FPUIGroup*)parent
 {
     // create group
-    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
-                                                               0, 
-                                                               0, 
-                                                               FPUI_GROUP_LABEL_HEIGHT)];
+    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:parent.frame];
+//    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
+//                                                               0, 
+//                                                               0, 
+//                                                               FPUI_GROUP_LABEL_HEIGHT)];
     
     // get type
     NSString* type = [TBXML attributeValue:element->firstAttribute];

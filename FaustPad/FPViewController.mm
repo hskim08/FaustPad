@@ -20,8 +20,9 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
 
 @interface FPViewController(hidden) 
 
-- (void) createInterfaceFromXmlFile:(NSString*)xmlFile toView:(UIView*)view;
 - (void) initMoNet;
+- (void) initSubViews;
+- (void) createInterfaceFromXmlFile:(NSString*)xmlFile toView:(UIView*)view;
 
 @end
 
@@ -46,53 +47,29 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
     // initialize mo_net
     [self initMoNet];
     
-    // add IP input
-    UILabel* ipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, 25)];
-    ipLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-    ipLabel.textColor = [UIColor lightGrayColor];
-    ipLabel.text = @"IP: ";
-    [self.view addSubview:ipLabel];
-    
-    ipText = [[UITextField alloc] initWithFrame:CGRectMake(30, 0, self.view.frame.size.width/4-30, 25)];
-    ipText.clearButtonMode = UITextFieldViewModeWhileEditing;
-    ipText.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    ipText.backgroundColor = [UIColor whiteColor];
-    ipText.text = [ServerData sharedInstance].serverIp;
-    ipText.delegate = self;
-    [self.view addSubview:ipText];
-    
-    // add node input
-    UILabel* nodeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 0, 75, 25)];
-    nodeLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-    nodeLabel.textColor = [UIColor lightGrayColor];
-    nodeLabel.text = @"NodeID: ";
-    [self.view addSubview:nodeLabel];
-    
-    nodeText = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4+75, 0, self.view.frame.size.width/4-75, 25)];
-    nodeText.clearButtonMode = UITextFieldViewModeWhileEditing;
-    nodeText.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    nodeText.backgroundColor = [UIColor whiteColor];
-    nodeText.text = [NSString stringWithFormat:@"%d", [ServerData sharedInstance].nodeId];
-    nodeText.delegate = self;
-    [self.view addSubview:nodeText];
-    
-    // create scroll view
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 
-                                                                25, 
-                                                                self.view.frame.size.width, 
-                                                                self.view.frame.size.height)];
-    
-    scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    scrollView.showsVerticalScrollIndicator = YES;
-    scrollView.scrollEnabled = YES;
-    scrollView.clipsToBounds = YES;
-    [self.view addSubview:scrollView];
-	
+    // initialize sub views
+    [self initSubViews];
+    	
     // load xml file
-    [self createInterfaceFromXmlFile:@"bowed.dsp.xml" toView:self.scrollView];
+    NSString* synthDefName = @"Karplus";
+    NSString* xmlFilename = [NSString stringWithFormat:@"%@.dsp.xml", [synthDefName lowercaseString]];
+    [self createInterfaceFromXmlFile:xmlFilename toView:self.scrollView];
     
     UIView* subView = [scrollView.subviews objectAtIndex:0];
-    scrollView.contentSize = CGSizeMake(subView.frame.size.width, subView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(subView.frame.size.width, subView.frame.size.height+2*FPUI_GROUP_INDENT);
+    
+    // create synth, assuming SynthDefs are loaded
+    // send OSC message
+    char types[2] = {'s', 'i'};
+    MoNet::sendMessage( 
+                       std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
+                       SC_PORT_TO, 
+                       std::string("/s_new"), 
+                       types, 
+                       2,
+                       [synthDefName cStringUsingEncoding:NSUTF8StringEncoding],
+                       [ServerData sharedInstance].nodeId
+                       );
 }
 
 - (void)viewDidUnload
@@ -148,6 +125,53 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
 }
 
 #pragma mark - Private methods
+
+- (void) initSubViews
+{
+    // add IP input
+    UILabel* ipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, 25)];
+    ipLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    ipLabel.textColor = [UIColor lightGrayColor];
+    ipLabel.text = @"IP: ";
+    [self.view addSubview:ipLabel];
+    
+    ipText = [[UITextField alloc] initWithFrame:CGRectMake(30, 0, self.view.frame.size.width/4-30, 25)];
+    ipText.clearButtonMode = UITextFieldViewModeWhileEditing;
+    ipText.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    ipText.backgroundColor = [UIColor whiteColor];
+    ipText.text = [ServerData sharedInstance].serverIp;
+    ipText.delegate = self;
+    [self.view addSubview:ipText];
+    
+    // add node input
+    UILabel* nodeLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 0, 75, 25)];
+    nodeLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    nodeLabel.textColor = [UIColor lightGrayColor];
+    nodeLabel.text = @"NodeID: ";
+    [self.view addSubview:nodeLabel];
+    
+    nodeText = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4+75, 0, self.view.frame.size.width/4-75, 25)];
+    nodeText.clearButtonMode = UITextFieldViewModeWhileEditing;
+    nodeText.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    nodeText.backgroundColor = [UIColor whiteColor];
+    nodeText.text = [NSString stringWithFormat:@"%d", [ServerData sharedInstance].nodeId];
+    nodeText.delegate = self;
+    [self.view addSubview:nodeText];
+    
+    // create scroll view
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 
+                                                                25, 
+                                                                self.view.frame.size.width, 
+                                                                self.view.frame.size.height)];
+    
+    scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    scrollView.showsVerticalScrollIndicator = YES;
+    scrollView.showsHorizontalScrollIndicator = YES;
+    scrollView.scrollEnabled = YES;
+    scrollView.clipsToBounds = YES;
+    [self.view addSubview:scrollView];
+    
+}
 
 - (void) createInterfaceFromXmlFile:(NSString*)xmlFile toView:(UIView*)view
 {
