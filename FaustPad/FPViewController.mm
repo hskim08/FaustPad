@@ -51,7 +51,7 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
     [self initSubViews];
     	
     // load xml file
-    NSString* synthDefName = @"Karplus";
+    NSString* synthDefName = @"bowed";
     NSString* xmlFilename = [NSString stringWithFormat:@"%@.dsp.xml", [synthDefName lowercaseString]];
     [self createInterfaceFromXmlFile:xmlFilename toView:self.scrollView];
     

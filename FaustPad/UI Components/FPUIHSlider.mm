@@ -26,6 +26,7 @@
         sliderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-25)];
         sliderLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
         sliderLabel.textColor = [UIColor lightGrayColor];
+        sliderLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:sliderLabel];
         
         slider = [[UISlider alloc] initWithFrame:CGRectMake(0, frame.size.height-25, frame.size.width, 25)];

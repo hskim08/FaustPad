@@ -36,6 +36,7 @@
 		AADA6B1014BB9C6E00A2CFAD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADA6B0F14BB9C6E00A2CFAD /* QuartzCore.framework */; };
 		AAE178E314B9BA2D00A36ABE /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE178E214B9BA2D00A36ABE /* icon114.png */; };
 		AAE178E514B9BA6B00A36ABE /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE178E414B9BA6B00A36ABE /* icon57.png */; };
+		AAEC6AEE14BD374700275732 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAEC6AED14BD374700275732 /* triangle.png */; };
 		AAF9BAD51450F15B005EF714 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AAF9BAD61450F15B005EF714 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF9BAD41450F15B005EF714 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		AADA6B0F14BB9C6E00A2CFAD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AAE178E214B9BA2D00A36ABE /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
 		AAE178E414B9BA6B00A36ABE /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		AAEC6AED14BD374700275732 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		AAF9BAD11450F15B005EF714 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		AAF9BAD21450F15B005EF714 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		AAF9BAD31450F15B005EF714 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 		AADA6B1214BB9E8300A2CFAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AAEC6AED14BD374700275732 /* triangle.png */,
 				AAE178E414B9BA6B00A36ABE /* icon57.png */,
 				AAE178E214B9BA2D00A36ABE /* icon114.png */,
 				AAC36CD91450FBBD00C16EC1 /* icon72.png */,
@@ -358,6 +361,7 @@
 				AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */,
 				AAE178E314B9BA2D00A36ABE /* icon114.png in Resources */,
 				AAE178E514B9BA6B00A36ABE /* icon57.png in Resources */,
+				AAEC6AEE14BD374700275732 /* triangle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

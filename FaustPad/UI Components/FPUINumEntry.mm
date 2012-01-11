@@ -28,6 +28,7 @@
         entryLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height-50, frame.size.width, 25)];
         entryLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
         entryLabel.textColor = [UIColor lightGrayColor];
+        entryLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:entryLabel];
         
         numEntry = [[UITextField alloc] initWithFrame:CGRectMake(0, frame.size.height-25, frame.size.width, 25)];
