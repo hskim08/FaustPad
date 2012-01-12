@@ -11,6 +11,8 @@
 #import "mo_net.h"
 #import "ServerData.h"
 
+#import "FormattedNSLogger.h"
+
 @implementation SynthViewController
 
 @synthesize scrollView;
@@ -87,7 +89,32 @@
     dspXmlParser = [[DspXmlParser alloc] initWithUrl:fileURL view:view node:self.nodeId];
     
     UIView* subview = [scrollView.subviews lastObject];
-    scrollView.contentSize = CGSizeMake(subview.frame.size.width, subview.frame.size.height+2*FPUI_GROUP_INDENT);
+    [self updateScrollViewSize];
+    
+    [subview addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void) updateScrollViewSize
+{
+    CGSize size = CGSizeMake(0, 0);
+    for (UIView* view in scrollView.subviews) {
+        if (size.width < view.frame.size.width) {
+            size.width = view.frame.size.width;
+        }
+        
+        if (size.height < view.frame.size.height) {
+            size.height = view.frame.size.height;
+        }
+    }
+
+    scrollView.contentSize = size;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if( [keyPath isEqualToString:@"frame"] ) {
+        [self updateScrollViewSize];
+    }
 }
 
 @end

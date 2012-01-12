@@ -21,5 +21,6 @@
 @property (nonatomic) NSUInteger nodeId;
 
 - (void) createInterfaceFromXmlFile:(NSString*)xmlFile toView:(UIView*)view;
+- (void) updateScrollViewSize;
 
 @end
