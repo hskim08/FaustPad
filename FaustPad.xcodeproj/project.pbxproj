@@ -39,6 +39,8 @@
 		AA960E7814BE98F80027D8FB /* SynthViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA960E7614BE98F70027D8FB /* SynthViewController.mm */; };
 		AA960E7914BE98F80027D8FB /* SynthViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA960E7714BE98F70027D8FB /* SynthViewController_iPad.xib */; };
 		AA960E7B14BE992E0027D8FB /* SynthViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA960E7A14BE992E0027D8FB /* SynthViewController_iPhone.xib */; };
+		AA9E318C14BED47D00C13A88 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9E318A14BED47D00C13A88 /* play@2x.png */; };
+		AA9E318D14BED47D00C13A88 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9E318B14BED47D00C13A88 /* plus@2x.png */; };
 		AAC36CC31450F79300C16EC1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC36CC21450F79300C16EC1 /* libz.dylib */; };
 		AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC36CD91450FBBD00C16EC1 /* icon72.png */; };
 		AAD7B51C1460F3B1007B1931 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7B51B1460F3B1007B1931 /* ServerData.m */; };
@@ -113,6 +115,8 @@
 		AA960E7614BE98F70027D8FB /* SynthViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SynthViewController.mm; sourceTree = "<group>"; };
 		AA960E7714BE98F70027D8FB /* SynthViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SynthViewController_iPad.xib; sourceTree = "<group>"; };
 		AA960E7A14BE992E0027D8FB /* SynthViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SynthViewController_iPhone.xib; sourceTree = "<group>"; };
+		AA9E318A14BED47D00C13A88 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		AA9E318B14BED47D00C13A88 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		AAC36CC21450F79300C16EC1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AAC36CD91450FBBD00C16EC1 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		AAD7B51A1460F3B1007B1931 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 		AADA6B1214BB9E8300A2CFAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA9E318A14BED47D00C13A88 /* play@2x.png */,
+				AA9E318B14BED47D00C13A88 /* plus@2x.png */,
 				AA8152B114BECF450044448A /* play.png */,
 				AA8152AF14BECF380044448A /* plus.png */,
 				AAEC6AED14BD374700275732 /* triangle.png */,
@@ -417,6 +423,8 @@
 				AA960E7B14BE992E0027D8FB /* SynthViewController_iPhone.xib in Resources */,
 				AA8152B014BECF380044448A /* plus.png in Resources */,
 				AA8152B214BECF450044448A /* play.png in Resources */,
+				AA9E318C14BED47D00C13A88 /* play@2x.png in Resources */,
+				AA9E318D14BED47D00C13A88 /* plus@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
