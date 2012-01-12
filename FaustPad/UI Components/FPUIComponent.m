@@ -13,6 +13,7 @@
 @synthesize cid;
 @synthesize label;
 @synthesize varname;
+@synthesize nodeId;
 
 - (id)initWithFrame:(CGRect)frame
 {

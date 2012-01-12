@@ -15,12 +15,13 @@
     TBXML* _tbXml;
     NSMutableArray* _widgetArray;
     UIView* _view;
+    NSUInteger nodeId;
 }
 
 @property (nonatomic, strong) NSArray* componentSet;
 @property (nonatomic, strong) NSArray* viewSet;
 
-- (id) initWithUrl:(NSURL*)xmlUrl view:(UIView*)view;
+- (id) initWithUrl:(NSURL*)xmlUrl view:(UIView*)view node:(NSUInteger)nodeId;
 
 - (void) traverseElement:(TBXMLElement*)element;
 

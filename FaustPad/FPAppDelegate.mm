@@ -8,19 +8,39 @@
 
 #import "FPAppDelegate.h"
 
-#import "FPViewController.h"
+#import "MainViewController.h"
+#import "SynthViewController.h"
+
+//#import "mo_net.h"
+#import "ServerData.h"
+
+//void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream, 
+//                   void * data )
+//{
+//    NSLog(@"Say What?");
+//    
+//    // TODO: parse message
+//}
 
 @implementation FPAppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize tabBarController = _tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // initialize mo_net
+//    [self initMoNet];
+    
+    maxTabs = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 5 : 8;
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[FPViewController alloc] initWithNibName:@"FPViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    
+    [self addMenuTab];
+    
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -63,5 +83,63 @@
      See also applicationDidEnterBackground:.
      */
 }
+
+- (void) addMenuTab
+{
+    NSMutableArray* vcArray = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
+    MainViewController* vc;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        vc = [[MainViewController alloc] initWithNibName:@"MainViewController_iPhone" bundle:nil];
+    }
+    else {
+        vc = [[MainViewController alloc] initWithNibName:@"MainViewController_iPad" bundle:nil];
+    }
+    [vcArray addObject:vc];
+    
+    vc.title = @"Menu";
+    vc.delegate = self;
+    
+    self.tabBarController.viewControllers = [NSArray arrayWithArray:vcArray];
+}
+
+- (void) addSynthTab:(NSString*)xmlFile
+{
+    if (self.tabBarController.viewControllers.count >= maxTabs) return;
+    
+    // create new view controller
+    SynthViewController* vc;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        vc = [[SynthViewController alloc] initWithNibName:@"SynthViewController_iPhone" bundle:nil];
+    }
+    else {
+        vc = [[SynthViewController alloc] initWithNibName:@"SynthViewController_iPad" bundle:nil];
+    }
+    
+    // initialize view controller
+    NSString* synthDefName = [[[xmlFile componentsSeparatedByString:@"."] objectAtIndex:0] capitalizedString];
+    
+    vc.nodeId = [[ServerData sharedInstance] getNewNodeId];
+    vc.title = [NSString stringWithFormat:@"%@: %d", synthDefName, vc.nodeId];
+    vc.synthFile = xmlFile;
+//    vc.delegate = self;
+    
+    // add new tab
+    NSMutableArray* vcArray = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
+    [vcArray addObject:vc];
+    
+    self.tabBarController.viewControllers = [NSArray arrayWithArray:vcArray];
+}
+
+//- (void) initMoNet
+//{
+//    // print out the IP of the device
+//    NSLog(@"IP: %s", MoNet::getMyIPaddress().c_str());
+//    
+//    // TODO: add patterns to listen for
+//    std::string pattern("/ding");
+//    MoNet::addAddressCallback( pattern, &monetCallback );
+//    MoNet::setListeningPort(SC_PORT_FROM);
+//    MoNet::startListening();
+//}
 
 @end

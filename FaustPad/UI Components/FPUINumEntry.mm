@@ -78,7 +78,7 @@
                        std::string("/n_set"), 
                        types, 
                        3,
-                       [ServerData sharedInstance].nodeId,
+                       self.nodeId,//[ServerData sharedInstance].nodeId,
                        [[self labelToArg] cStringUsingEncoding:NSUTF8StringEncoding],
                        self.value
                        );

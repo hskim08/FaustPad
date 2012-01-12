@@ -16,8 +16,10 @@
 @interface ServerData : NSObject
 
 @property (nonatomic, strong) NSString* serverIp;
-@property (nonatomic) int nodeId;
+@property (nonatomic) NSUInteger nodeAssign;
 
 + (ServerData *)sharedInstance;
+
+- (NSUInteger) getNewNodeId;
 
 @end

@@ -28,8 +28,17 @@
 		AA75997B14566BE300DAA23E /* FPUIButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA75997A14566BE300DAA23E /* FPUIButton.mm */; };
 		AA75997E145674E100DAA23E /* FPUIGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75997D145674E100DAA23E /* FPUIGroup.m */; };
 		AA759994145689BD00DAA23E /* FPUINumEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA759993145689BD00DAA23E /* FPUINumEntry.mm */; };
+		AA8152AA14BEA2220044448A /* FormattedNSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8152A914BEA2220044448A /* FormattedNSLogger.m */; };
+		AA8152B014BECF380044448A /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8152AF14BECF380044448A /* plus.png */; };
+		AA8152B214BECF450044448A /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8152B114BECF450044448A /* play.png */; };
 		AA8C16DF1456018B000D64D9 /* FPUIComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C16DE1456018B000D64D9 /* FPUIComponent.m */; };
 		AA8C16E2145601FD000D64D9 /* FPUIHSlider.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */; };
+		AA960E6714BE66410027D8FB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA960E6514BE66410027D8FB /* MainViewController.m */; };
+		AA960E6814BE66410027D8FB /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA960E6614BE66410027D8FB /* MainViewController_iPad.xib */; };
+		AA960E6A14BE692A0027D8FB /* MainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA960E6914BE692A0027D8FB /* MainViewController_iPhone.xib */; };
+		AA960E7814BE98F80027D8FB /* SynthViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA960E7614BE98F70027D8FB /* SynthViewController.mm */; };
+		AA960E7914BE98F80027D8FB /* SynthViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA960E7714BE98F70027D8FB /* SynthViewController_iPad.xib */; };
+		AA960E7B14BE992E0027D8FB /* SynthViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA960E7A14BE992E0027D8FB /* SynthViewController_iPhone.xib */; };
 		AAC36CC31450F79300C16EC1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC36CC21450F79300C16EC1 /* libz.dylib */; };
 		AAC36CDA1450FBBD00C16EC1 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC36CD91450FBBD00C16EC1 /* icon72.png */; };
 		AAD7B51C1460F3B1007B1931 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7B51B1460F3B1007B1931 /* ServerData.m */; };
@@ -52,8 +61,8 @@
 		AA1AE60A144BBD80008C4859 /* FaustPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaustPad-Prefix.pch"; sourceTree = "<group>"; };
 		AA1AE60B144BBD80008C4859 /* FPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPAppDelegate.h; sourceTree = "<group>"; };
 		AA1AE60C144BBD80008C4859 /* FPAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FPAppDelegate.mm; sourceTree = "<group>"; };
-		AA1AE60E144BBD80008C4859 /* FPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPViewController.h; sourceTree = "<group>"; };
-		AA1AE60F144BBD80008C4859 /* FPViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FPViewController.mm; sourceTree = "<group>"; };
+		AA1AE60E144BBD80008C4859 /* FPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FPViewController.h; path = FaustPad/FPViewController.h; sourceTree = "<group>"; };
+		AA1AE60F144BBD80008C4859 /* FPViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = FPViewController.mm; path = FaustPad/FPViewController.mm; sourceTree = "<group>"; };
 		AA1AE612144BBD80008C4859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPViewController.xib; sourceTree = "<group>"; };
 		AA1AE61E144BE398008C4859 /* DspXmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DspXmlParser.h; sourceTree = "<group>"; };
 		AA1AE61F144BE398008C4859 /* DspXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DspXmlParser.m; sourceTree = "<group>"; };
@@ -88,10 +97,22 @@
 		AA75997D145674E100DAA23E /* FPUIGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPUIGroup.m; path = "UI Components/FPUIGroup.m"; sourceTree = "<group>"; };
 		AA759993145689BD00DAA23E /* FPUINumEntry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUINumEntry.mm; path = "UI Components/FPUINumEntry.mm"; sourceTree = "<group>"; };
 		AA75999514568B5E00DAA23E /* FPUINumEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUINumEntry.h; path = "UI Components/FPUINumEntry.h"; sourceTree = "<group>"; };
+		AA8152A814BEA2220044448A /* FormattedNSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormattedNSLogger.h; sourceTree = "<group>"; };
+		AA8152A914BEA2220044448A /* FormattedNSLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormattedNSLogger.m; sourceTree = "<group>"; };
+		AA8152AF14BECF380044448A /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		AA8152B114BECF450044448A /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		AA8C16DD1456018B000D64D9 /* FPUIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIComponent.h; path = "UI Components/FPUIComponent.h"; sourceTree = "<group>"; };
 		AA8C16DE1456018B000D64D9 /* FPUIComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPUIComponent.m; path = "UI Components/FPUIComponent.m"; sourceTree = "<group>"; };
 		AA8C16E0145601FD000D64D9 /* FPUIHSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUIHSlider.h; path = "UI Components/FPUIHSlider.h"; sourceTree = "<group>"; };
 		AA8C16E1145601FD000D64D9 /* FPUIHSlider.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUIHSlider.mm; path = "UI Components/FPUIHSlider.mm"; sourceTree = "<group>"; };
+		AA960E6414BE66400027D8FB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		AA960E6514BE66410027D8FB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		AA960E6614BE66410027D8FB /* MainViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_iPad.xib; sourceTree = "<group>"; };
+		AA960E6914BE692A0027D8FB /* MainViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_iPhone.xib; sourceTree = "<group>"; };
+		AA960E7514BE98F70027D8FB /* SynthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthViewController.h; sourceTree = "<group>"; };
+		AA960E7614BE98F70027D8FB /* SynthViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SynthViewController.mm; sourceTree = "<group>"; };
+		AA960E7714BE98F70027D8FB /* SynthViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SynthViewController_iPad.xib; sourceTree = "<group>"; };
+		AA960E7A14BE992E0027D8FB /* SynthViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SynthViewController_iPhone.xib; sourceTree = "<group>"; };
 		AAC36CC21450F79300C16EC1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AAC36CD91450FBBD00C16EC1 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		AAD7B51A1460F3B1007B1931 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
@@ -128,6 +149,7 @@
 				AA1AE602144BBD80008C4859 /* FaustPad */,
 				AA1AE5FB144BBD80008C4859 /* Frameworks */,
 				AA1AE5F9144BBD80008C4859 /* Products */,
+				AA8152A614BEA1310044448A /* Deprecated */,
 				AAC36CC21450F79300C16EC1 /* libz.dylib */,
 			);
 			sourceTree = "<group>";
@@ -159,9 +181,10 @@
 				AA1AE61D144BE354008C4859 /* Utilities */,
 				AA1AE60B144BBD80008C4859 /* FPAppDelegate.h */,
 				AA1AE60C144BBD80008C4859 /* FPAppDelegate.mm */,
-				AA1AE60E144BBD80008C4859 /* FPViewController.h */,
-				AA1AE60F144BBD80008C4859 /* FPViewController.mm */,
-				AA1AE611144BBD80008C4859 /* FPViewController.xib */,
+				AA960E6414BE66400027D8FB /* MainViewController.h */,
+				AA960E6514BE66410027D8FB /* MainViewController.m */,
+				AA960E7514BE98F70027D8FB /* SynthViewController.h */,
+				AA960E7614BE98F70027D8FB /* SynthViewController.mm */,
 				AA1AE603144BBD80008C4859 /* Supporting Files */,
 			);
 			path = FaustPad;
@@ -170,6 +193,7 @@
 		AA1AE603144BBD80008C4859 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA960E6214BE64E90027D8FB /* Xibs */,
 				AADA6B1214BB9E8300A2CFAD /* Images */,
 				AA1AE604144BBD80008C4859 /* FaustPad-Info.plist */,
 				AA1AE605144BBD80008C4859 /* InfoPlist.strings */,
@@ -186,6 +210,8 @@
 				AA1AE61F144BE398008C4859 /* DspXmlParser.m */,
 				AAD7B51A1460F3B1007B1931 /* ServerData.h */,
 				AAD7B51B1460F3B1007B1931 /* ServerData.m */,
+				AA8152A814BEA2220044448A /* FormattedNSLogger.h */,
+				AA8152A914BEA2220044448A /* FormattedNSLogger.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -254,6 +280,16 @@
 			path = osc;
 			sourceTree = "<group>";
 		};
+		AA8152A614BEA1310044448A /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				AA1AE60E144BBD80008C4859 /* FPViewController.h */,
+				AA1AE60F144BBD80008C4859 /* FPViewController.mm */,
+				AA1AE611144BBD80008C4859 /* FPViewController.xib */,
+			);
+			name = Deprecated;
+			sourceTree = "<group>";
+		};
 		AA8C16DC1455FB30000D64D9 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,9 +307,22 @@
 			name = "UI Components";
 			sourceTree = "<group>";
 		};
+		AA960E6214BE64E90027D8FB /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				AA960E7714BE98F70027D8FB /* SynthViewController_iPad.xib */,
+				AA960E7A14BE992E0027D8FB /* SynthViewController_iPhone.xib */,
+				AA960E6614BE66410027D8FB /* MainViewController_iPad.xib */,
+				AA960E6914BE692A0027D8FB /* MainViewController_iPhone.xib */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
 		AADA6B1214BB9E8300A2CFAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA8152B114BECF450044448A /* play.png */,
+				AA8152AF14BECF380044448A /* plus.png */,
 				AAEC6AED14BD374700275732 /* triangle.png */,
 				AAE178E414B9BA6B00A36ABE /* icon57.png */,
 				AAE178E214B9BA2D00A36ABE /* icon114.png */,
@@ -362,6 +411,12 @@
 				AAE178E314B9BA2D00A36ABE /* icon114.png in Resources */,
 				AAE178E514B9BA6B00A36ABE /* icon57.png in Resources */,
 				AAEC6AEE14BD374700275732 /* triangle.png in Resources */,
+				AA960E6814BE66410027D8FB /* MainViewController_iPad.xib in Resources */,
+				AA960E6A14BE692A0027D8FB /* MainViewController_iPhone.xib in Resources */,
+				AA960E7914BE98F80027D8FB /* SynthViewController_iPad.xib in Resources */,
+				AA960E7B14BE992E0027D8FB /* SynthViewController_iPhone.xib in Resources */,
+				AA8152B014BECF380044448A /* plus.png in Resources */,
+				AA8152B214BECF450044448A /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +448,9 @@
 				AA5A5748145E4C700039B313 /* OscTypes.cpp in Sources */,
 				AA5A574C145E4CBA0039B313 /* mo_thread.mm in Sources */,
 				AAD7B51C1460F3B1007B1931 /* ServerData.m in Sources */,
+				AA960E6714BE66410027D8FB /* MainViewController.m in Sources */,
+				AA960E7814BE98F80027D8FB /* SynthViewController.mm in Sources */,
+				AA8152AA14BEA2220044448A /* FormattedNSLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +471,7 @@
 				AA1AE612144BBD80008C4859 /* en */,
 			);
 			name = FPViewController.xib;
+			path = FaustPad;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

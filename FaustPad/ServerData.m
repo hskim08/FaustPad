@@ -13,7 +13,7 @@ static ServerData *sharedInstance = nil;
 @implementation ServerData
 
 @synthesize serverIp;
-@synthesize nodeId;
+@synthesize nodeAssign;
 
 + (ServerData *)sharedInstance
 {
@@ -28,10 +28,17 @@ static ServerData *sharedInstance = nil;
     self = [super init];
     if ( self ) {
         
-        serverIp = @"128.12.142.63";
-        nodeId = 1000;
+        serverIp = @"menlo.stanford.edu";
+        nodeAssign = 999;
+//        nodeId = 1000;
     }
     return  self;
+}
+
+- (NSUInteger) getNewNodeId
+{
+    nodeAssign++;
+    return nodeAssign;
 }
 
 @end

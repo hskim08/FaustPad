@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-#import "mo_net.h"
 #import "DspXmlParser.h"
 
-@interface FPViewController : UIViewController<UITextFieldDelegate> {
-    
-    DspXmlParser* dspXmlParser;
-}
+@interface FPViewController : UIViewController<UITextFieldDelegate>
 
 @property (nonatomic, strong) UIScrollView* scrollView;
 @property (nonatomic, strong) UITextField* ipText;
 @property (nonatomic, strong) UITextField* nodeText;
+
+@property (nonatomic, strong) DspXmlParser* dspXmlParser;
 
 @end

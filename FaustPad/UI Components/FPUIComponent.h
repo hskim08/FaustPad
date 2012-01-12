@@ -13,6 +13,7 @@
 @property (nonatomic, readwrite) NSInteger cid;
 @property (nonatomic, strong) NSString* label;
 @property (nonatomic, strong) NSString* varname;
+@property (nonatomic) NSUInteger nodeId;
 
 - (NSString*) labelToArg;
 - (void) setMin:(double)minv max:(double)maxv; // virtual function

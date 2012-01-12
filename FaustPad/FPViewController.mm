@@ -8,19 +8,12 @@
 
 #import "FPViewController.h"
 
-#import "ServerData.h"
+#import "mo_net.h"
 
-void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream, 
-                     void * data )
-{
-    NSLog(@"Say What?");
-    
-    // TODO: parse message
-}
+#import "ServerData.h"
 
 @interface FPViewController(hidden) 
 
-- (void) initMoNet;
 - (void) initSubViews;
 - (void) createInterfaceFromXmlFile:(NSString*)xmlFile toView:(UIView*)view;
 
@@ -31,6 +24,8 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
 @synthesize scrollView;
 @synthesize ipText;
 @synthesize nodeText;
+
+@synthesize dspXmlParser;
 
 - (void)didReceiveMemoryWarning
 {
@@ -43,9 +38,6 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // initialize mo_net
-    [self initMoNet];
     
     // initialize sub views
     [self initSubViews];
@@ -68,7 +60,7 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
                        types, 
                        2,
                        [synthDefName cStringUsingEncoding:NSUTF8StringEncoding],
-                       [ServerData sharedInstance].nodeId
+                       [ServerData sharedInstance].nodeAssign
                        );
 }
 
@@ -113,7 +105,7 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
     // TODO: validate inputs
     
     if (textField == ipText) [ServerData sharedInstance].serverIp = textField.text;
-    if (textField == nodeText) [ServerData sharedInstance].nodeId = [textField.text intValue]; 
+    if (textField == nodeText) [ServerData sharedInstance].nodeAssign = [textField.text intValue]; 
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -154,7 +146,7 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
     nodeText.clearButtonMode = UITextFieldViewModeWhileEditing;
     nodeText.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     nodeText.backgroundColor = [UIColor whiteColor];
-    nodeText.text = [NSString stringWithFormat:@"%d", [ServerData sharedInstance].nodeId];
+    nodeText.text = [NSString stringWithFormat:@"%d", [ServerData sharedInstance].nodeAssign];
     nodeText.delegate = self;
     [self.view addSubview:nodeText];
     
@@ -181,21 +173,7 @@ void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream,
     NSString* filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, xmlFile];
     NSURL* fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
     
-    // TODO: check if file exists
-    
-    dspXmlParser = [[DspXmlParser alloc] initWithUrl:fileURL view:view];
-}
-
-- (void) initMoNet
-{
-    // print out the IP of the device
-    NSLog(@"IP: %s", MoNet::getMyIPaddress().c_str());
-    
-    // TODO: add patterns to listen for
-    std::string pattern("/ding");
-    MoNet::addAddressCallback( pattern, &monetCallback );
-    MoNet::setListeningPort(SC_PORT_FROM);
-    MoNet::startListening();
+    dspXmlParser = [[DspXmlParser alloc] initWithUrl:fileURL view:view node:[ServerData sharedInstance].nodeAssign];
 }
 
 @end

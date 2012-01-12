@@ -8,12 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@class FPViewController;
+@protocol MenuTabDelegate <NSObject>
+@required
+- (void) addSynthTab:(NSString*)xmlFile;
 
-@interface FPAppDelegate : UIResponder <UIApplicationDelegate>
+@end
 
+@interface FPAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, MenuTabDelegate> {
+    NSUInteger maxTabs;
+}
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
-@property (strong, nonatomic) FPViewController *viewController;
+- (void) addMenuTab;
+- (void) addSynthTab:(NSString*)xmlFile;
+
+//- (void) initMoNet;
 
 @end

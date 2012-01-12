@@ -19,12 +19,13 @@
 @synthesize viewSet;
 
 
-- (id) initWithUrl:(NSURL*)xmlUrl view:(UIView *)view {
+- (id) initWithUrl:(NSURL*)xmlUrl view:(UIView *)view node:(NSUInteger)ni {
 
     self = [super init];
     
     if ( self != nil ) {
         _view = view;
+        nodeId = ni;
         
         NSLog(@"Parsing: %@", xmlUrl.absoluteString.lastPathComponent);
 
@@ -127,6 +128,7 @@
 {
     // create slider
     FPUIHSlider* slider = [[FPUIHSlider alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+    slider.nodeId = nodeId;
     
     // set values
     TBXMLElement* label = element;
@@ -155,6 +157,7 @@
 - (UIView*) createButton:(TBXMLElement*)element withId:(NSInteger)cid
 {
     FPUIButton* button = [[FPUIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    button.nodeId = nodeId;
     
     TBXMLElement* label = element;
     TBXMLElement* varname = label->nextSibling;
@@ -173,6 +176,7 @@
 - (UIView*) createNEntry:(TBXMLElement*)element withId:(NSInteger)cid
 {
     FPUINumEntry* numEntry = [[FPUINumEntry alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    numEntry.nodeId = nodeId;
     
     TBXMLElement* label = element;
     TBXMLElement* varname = label->nextSibling;
@@ -222,10 +226,6 @@
     NSLog(@"view frame: %f/%f/%f/%f", view.frame.origin.x, view.frame.origin.y, view.frame.size.width, view.frame.size.height);
     // create group
     FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:view.frame];
-//    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
-//                                                               0, 
-//                                                               0, 
-//                                                               FPUI_GROUP_LABEL_HEIGHT)];
     
     // get type
     NSString* type = [TBXML attributeValue:element->firstAttribute];
@@ -259,10 +259,6 @@
 {
     // create group
     FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:parent.frame];
-//    FPUIGroup* group = [[FPUIGroup alloc] initWithFrame:CGRectMake(0, 
-//                                                               0, 
-//                                                               0, 
-//                                                               FPUI_GROUP_LABEL_HEIGHT)];
     
     // get type
     NSString* type = [TBXML attributeValue:element->firstAttribute];
