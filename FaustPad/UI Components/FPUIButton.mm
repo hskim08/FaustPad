@@ -46,35 +46,17 @@
 - (void) handleButtonPressed:(UIButton*)sender
 {
     NSLog(@"button %d(%@) pressed", self.cid, [self labelToArg]);
-    
-    char types[3] = {'i', 's', 'f'};
-    MoNet::sendMessage( 
-                       std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
-                       SC_PORT_TO, 
-                       std::string("/n_set"), 
-                       types, 
-                       3,
-                       self.nodeId,//[ServerData sharedInstance].nodeId,
-                       [[self labelToArg] cStringUsingEncoding:NSUTF8StringEncoding],
-                       1.0
-                       );
+
+    // send OSC message
+    [self sendOscMessageWithValue:1];
 }
 
 - (void) handleButtonReleased:(UIButton*)sender
 {
     NSLog(@"button %d(%@) released", self.cid, [self labelToArg]);
-    
-    char types[3] = {'i', 's', 'f'};
-    MoNet::sendMessage( 
-                       std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
-                       SC_PORT_TO, 
-                       std::string("/n_set"), 
-                       types, 
-                       3,
-                       self.nodeId,//[ServerData sharedInstance].nodeId,
-                       [[self labelToArg] cStringUsingEncoding:NSUTF8StringEncoding],
-                       0.0
-                       );    
+
+    // send OSC message
+    [self sendOscMessageWithValue:0];
 }
 
 @end

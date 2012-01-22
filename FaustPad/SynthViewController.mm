@@ -15,6 +15,8 @@
 
 @implementation SynthViewController
 
+@synthesize delegate;
+
 @synthesize scrollView;
 @synthesize dspXmlParser;
 @synthesize synthFile;
@@ -49,10 +51,35 @@
     
     [self createInterfaceFromXmlFile:synthFile toView:scrollView];
     
+    // pull close button forward
+    [self.scrollView bringSubviewToFront:closeButton];
+    
     // create synth, assuming SynthDefs are loaded
-    NSString* synthDefName = [[[synthFile componentsSeparatedByString:@"."] objectAtIndex:0] capitalizedString];
+    NSString* synthDefName = [[synthFile componentsSeparatedByString:@"."] objectAtIndex:0];
+    //[[[synthFile componentsSeparatedByString:@"."] objectAtIndex:0] capitalizedString];
+    
+    // hide view
+    scrollView.frame = CGRectMake(
+                                  0, 
+                                  scrollView.frame.size.height, 
+                                  scrollView.frame.size.width, 
+                                  scrollView.frame.size.height
+                                  );
+    
+    // popup from below
+    [UIView animateWithDuration:0.5 
+                     animations:^{
+                         scrollView.frame = CGRectMake(
+                                                       0, 
+                                                       0, 
+                                                       scrollView.frame.size.width, 
+                                                       scrollView.frame.size.height
+                                                       );
+
+                     }];
     
     // send OSC message
+    NSLog(@"/s_new: %@", synthDefName);
     char types[2] = {'s', 'i'};
     MoNet::sendMessage( 
                        std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
@@ -115,6 +142,31 @@
     if( [keyPath isEqualToString:@"frame"] ) {
         [self updateScrollViewSize];
     }
+}
+
+- (IBAction)handleCloseTap:(UIButton*)sender
+{
+    // send OSC message
+    NSLog(@"/n_free: %d", nodeId);
+    char types[1] = { 'i'};
+    MoNet::sendMessage( 
+                       std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
+                       [ServerData sharedInstance].outPort, 
+                       std::string("/n_free"), 
+                       types, 
+                       1,
+                       nodeId
+                       );
+    
+    // remove observer
+    for (UIView* view in scrollView.subviews) {
+        if ([view isKindOfClass:[FPUIGroup class]]) {
+            [view removeObserver:self forKeyPath:@"frame"];
+        }
+    }
+    
+    // call delegate
+    [delegate closeSynthTab:nodeId];
 }
 
 @end

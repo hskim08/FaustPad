@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FPAppDelegate.h"
 #import "DspXmlParser.h"
 
 @interface SynthViewController : UIViewController {
+    
+    id <SynthTabDelegate> delegate;
+    
     IBOutlet UIScrollView* scrollView;
+    IBOutlet UIButton* closeButton;
 }
+
+@property (retain) id delegate;
 
 @property (nonatomic, strong) UIScrollView* scrollView;
 @property (nonatomic, strong) DspXmlParser* dspXmlParser;
@@ -22,5 +29,7 @@
 
 - (void) createInterfaceFromXmlFile:(NSString*)xmlFile toView:(UIView*)view;
 - (void) updateScrollViewSize;
+
+- (IBAction)handleCloseTap:(UIButton*)sender;
 
 @end

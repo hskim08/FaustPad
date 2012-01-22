@@ -14,7 +14,13 @@
 
 @end
 
-@interface FPAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, MenuTabDelegate> {
+@protocol SynthTabDelegate <NSObject>
+@required
+- (void) closeSynthTab:(NSUInteger)nodeId;
+
+@end
+
+@interface FPAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, MenuTabDelegate, SynthTabDelegate> {
     NSUInteger maxTabs;
 }
 @property (strong, nonatomic) UIWindow *window;
@@ -22,7 +28,8 @@
 
 - (void) addMenuTab;
 - (void) addSynthTab:(NSString*)xmlFile;
+- (void) closeSynthTab:(NSUInteger)nodeId;
 
-//- (void) initMoNet;
+- (void) initMoNet;
 
 @end

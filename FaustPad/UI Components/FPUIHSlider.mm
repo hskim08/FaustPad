@@ -51,24 +51,15 @@
     slider.maximumValue = maxv;
 }
 
-std::map<std::string, UdpTransmitSocket *> m_cache;
-unsigned int m_output_buffer_size = 1024;
+//std::map<std::string, UdpTransmitSocket *> m_cache;
+//unsigned int m_output_buffer_size = 1024;
+
 - (void) handleValueChanged:(UISlider*)sender
 {
     NSLog(@"slider %d(%@) value: %.2f", self.cid, [self labelToArg], sender.value);
-    
-    char types[3] = {'i', 's', 'f'};
-    MoNet::sendMessage( 
-                       std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
-                       SC_PORT_TO, 
-                       std::string("/n_set"), 
-                       types, 
-                       3,
-                       self.nodeId,//[ServerData sharedInstance].nodeId,
-                       [[self labelToArg] cStringUsingEncoding:NSUTF8StringEncoding],
-                       sender.value
-                       );
 
+    // send OSC message
+    [self sendOscMessageWithValue:sender.value];
 }
 
 

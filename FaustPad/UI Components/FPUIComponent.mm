@@ -8,6 +8,9 @@
 
 #import "FPUIComponent.h"
 
+#import "ServerData.h"
+#import "mo_net.h"
+
 @implementation FPUIComponent
 
 @synthesize cid;
@@ -27,8 +30,25 @@
 // changes the label to the supercollider property argument
 -(NSString*) labelToArg
 {
-//    return [NSString stringWithFormat:@"/%@", [[label lowercaseString] stringByReplacingOccurrencesOfString:@" " withString:@"_"]];
     return [[label lowercaseString] stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+}
+
+- (void) sendOscMessageWithValue:(float)value
+{
+    ServerData* server = [ServerData sharedInstance];
+    
+    char types[3] = {'i', 's', 'f'};
+    MoNet::sendMessage( 
+                       std::string([server.serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
+                       server.outPort, 
+                       std::string("/n_set"), 
+                       types,
+                       3,
+                       self.nodeId,
+                       [[self labelToArg] cStringUsingEncoding:NSUTF8StringEncoding],
+                       value
+                       );
+
 }
 
 - (void) setMin:(double)minv max:(double)maxv

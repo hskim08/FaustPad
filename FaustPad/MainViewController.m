@@ -12,15 +12,13 @@
 @implementation MainViewController
 @synthesize delegate;
 @synthesize fileList;
-@synthesize ipText;
-@synthesize synthText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.tabBarItem.image = [UIImage imageNamed:@"plus"];
+        self.tabBarItem.image = [UIImage imageNamed:@"doc"];
     }
     return self;
 }
@@ -40,7 +38,15 @@
     [super viewDidLoad];
     
     ipText.delegate = self;
-    synthText.delegate = self;
+    oPortText.delegate = self;
+    iPortText.delegate = self;
+    synthPickerView.delegate = self;
+    
+    // hide picker
+    popupView.hidden = YES;
+    [self.view addSubview:popupView];
+    settingsView.hidden = YES;
+    [self.view addSubview:settingsView];
     
     // get list of files
     NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
@@ -49,9 +55,8 @@
     NSFileManager *manager = [NSFileManager defaultManager];
     self.fileList = [manager contentsOfDirectoryAtPath:documentsDirectory error:nil];
     
-    for (NSString* s in fileList) {
-       // TODO: add files to picker view 
-    }
+    // initialize synth button. TODO: handle empty case
+    [synthButton setTitle:[fileList objectAtIndex:0] forState:UIControlStateNormal];
 }
 
 - (void)viewDidUnload
@@ -76,6 +81,14 @@
     if (textField == ipText) {
         
         [ServerData sharedInstance].serverIp = textField.text;
+    } 
+    else if (textField == oPortText) {
+        
+        [ServerData sharedInstance].outPort = textField.text.intValue;
+    }
+    else if (textField == iPortText) {
+        
+        [ServerData sharedInstance].inPort = textField.text.intValue;
     }
 }
 
@@ -87,11 +100,152 @@
     return YES;
 }
 
+#pragma mark - UIPickerViewDataSource methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return fileList.count;
+}
+
+#pragma mark - UIPickerViewDelegate methods
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component 
+{
+    return [fileList objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component 
+{    
+    [synthButton setTitle:[fileList objectAtIndex:row] forState:UIControlStateNormal];
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    CGFloat value = 0;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        value = self.view.frame.size.width;
+    } 
+    else {
+        value = 320;
+    }
+    return value;
+}
+
 #pragma mark - UI event handlers
 
 - (IBAction)handleAddClicked:(UIButton*)sender
 {
-    [delegate addSynthTab:synthText.text];
+    [delegate addSynthTab:[synthButton titleForState:UIControlStateNormal]];
 }
+
+- (IBAction)handleSynthTap:(UITextField*)sender
+{
+    [self showPicker:popupView.hidden];
+}
+
+- (IBAction)handleDoneTap:(UIButton*)sender
+{
+    [self showPicker:popupView.hidden];
+}
+
+- (IBAction)handleSettingsTap:(UIButton*)sender
+{
+    [self showSettings:settingsView.hidden];
+}
+
+- (IBAction)handleSettingsDoneTap:(UIButton*)sender
+{
+    [self showSettings:settingsView.hidden];
+}
+
+- (void) showPicker:(BOOL)show
+{
+    UIView* view = popupView;
+    if (show) { // show
+        // move picker to lowest position and show
+        view.frame = CGRectMake(
+                                           0, 
+                                           self.view.frame.size.height, 
+                                           self.view.frame.size.width, 
+                                           view.frame.size.height
+                                           );
+        
+        view.hidden = NO;
+        
+        // show picker
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            view.frame = CGRectMake(
+                                               0, 
+                                               self.view.frame.size.height-view.frame.size.height, 
+                                               self.view.frame.size.width, 
+                                               view.frame.size.height
+                                               );
+        }];
+    }
+    else { // hide
+        
+        [UIView animateWithDuration:0.3 
+                         animations:^{
+                             view.frame = CGRectMake(
+                                                                0, 
+                                                                self.view.frame.size.height, 
+                                                                self.view.frame.size.width, 
+                                                                view.frame.size.height
+                                                                );
+                         } 
+                         completion:^(BOOL finished) {
+                             view.hidden = YES;
+                             
+                         }];
+    }
+}
+
+- (void) showSettings:(BOOL)show
+{
+    UIView* view = settingsView;
+    if (show) { // show
+        // move picker to lowest position and show
+        view.frame = CGRectMake(
+                                0, 
+                                self.view.frame.size.height, 
+                                self.view.frame.size.width, 
+                                view.frame.size.height
+                                );
+        
+        view.hidden = NO;
+        
+        // show picker
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            view.frame = CGRectMake(
+                                    0, 
+                                    0, 
+                                    self.view.frame.size.width, 
+                                    view.frame.size.height
+                                    );
+        }];
+    }
+    else { // hide
+        
+        [UIView animateWithDuration:0.3 
+                         animations:^{
+                             view.frame = CGRectMake(
+                                                     0, 
+                                                     self.view.frame.size.height, 
+                                                     self.view.frame.size.width, 
+                                                     view.frame.size.height
+                                                     );
+                         } 
+                         completion:^(BOOL finished) {
+                             view.hidden = YES;
+                             
+                         }];
+    }}
 
 @end

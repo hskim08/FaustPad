@@ -10,21 +10,31 @@
 
 #import "FPAppDelegate.h"
 
-@interface MainViewController : UIViewController<UITextFieldDelegate> {
+@interface MainViewController : UIViewController<UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
     
     id <MenuTabDelegate> delegate;
     
+    IBOutlet UIButton* synthButton;
+    IBOutlet UIPickerView* synthPickerView;
+    IBOutlet UIView* popupView;
+    IBOutlet UIView* settingsView;
+    
     IBOutlet UITextField* ipText;
-    IBOutlet UITextField* synthText;
+    IBOutlet UITextField* iPortText;
+    IBOutlet UITextField* oPortText;    
 }
 
 @property (retain) id delegate;
 
 @property (nonatomic, strong) NSArray* fileList;
 
-@property (nonatomic, strong) UITextField* ipText;
-@property (nonatomic, strong) UITextField* synthText;
-
 - (IBAction)handleAddClicked:(UIButton*)sender;
+- (IBAction)handleSynthTap:(UIButton*)sender;
+- (IBAction)handleDoneTap:(UIButton*)sender;
+- (IBAction)handleSettingsTap:(UIButton*)sender;
+- (IBAction)handleSettingsDoneTap:(UIButton*)sender;
+
+- (void) showPicker:(BOOL)show;
+- (void) showSettings:(BOOL)show;
 
 @end

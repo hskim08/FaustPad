@@ -16,6 +16,9 @@
 @interface ServerData : NSObject
 
 @property (nonatomic, strong) NSString* serverIp;
+@property (nonatomic) NSUInteger inPort;
+@property (nonatomic) NSUInteger outPort;
+
 @property (nonatomic) NSUInteger nodeAssign;
 
 + (ServerData *)sharedInstance;

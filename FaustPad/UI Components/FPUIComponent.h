@@ -16,6 +16,7 @@
 @property (nonatomic) NSUInteger nodeId;
 
 - (NSString*) labelToArg;
+- (void) sendOscMessageWithValue:(float)value;
 - (void) setMin:(double)minv max:(double)maxv; // virtual function
 
 @end

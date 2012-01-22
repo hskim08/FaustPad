@@ -71,18 +71,7 @@
     self.value = [textField.text doubleValue];
     
     // send OSC message
-    char types[3] = {'i', 's', 'f'};
-    MoNet::sendMessage( 
-                       std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
-                       SC_PORT_TO, 
-                       std::string("/n_set"), 
-                       types, 
-                       3,
-                       self.nodeId,//[ServerData sharedInstance].nodeId,
-                       [[self labelToArg] cStringUsingEncoding:NSUTF8StringEncoding],
-                       self.value
-                       );
-
+    [self sendOscMessageWithValue:self.value];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

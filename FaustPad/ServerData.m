@@ -12,7 +12,7 @@ static ServerData *sharedInstance = nil;
 
 @implementation ServerData
 
-@synthesize serverIp;
+@synthesize serverIp, inPort, outPort;
 @synthesize nodeAssign;
 
 + (ServerData *)sharedInstance
@@ -29,8 +29,11 @@ static ServerData *sharedInstance = nil;
     if ( self ) {
         
         serverIp = @"menlo.stanford.edu";
+
+        inPort = SC_PORT_FROM;
+        outPort = SC_PORT_TO;
+        
         nodeAssign = 999;
-//        nodeId = 1000;
     }
     return  self;
 }

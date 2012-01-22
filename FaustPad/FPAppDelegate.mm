@@ -11,16 +11,24 @@
 #import "MainViewController.h"
 #import "SynthViewController.h"
 
-//#import "mo_net.h"
+#import "mo_net.h"
 #import "ServerData.h"
 
-//void monetCallback( osc::ReceivedMessageArgumentStream& argument_stream, 
-//                   void * data )
-//{
-//    NSLog(@"Say What?");
-//    
-//    // TODO: parse message
-//}
+void doneCallback( osc::ReceivedMessageArgumentStream& argument_stream, 
+                   void * data )
+{
+    NSLog(@"Yay!");
+    
+    // TODO: parse message
+}
+
+void failCallback( osc::ReceivedMessageArgumentStream& argument_stream, 
+                  void * data )
+{
+    NSLog(@"What! You FAILED!?!");
+    
+    // TODO: parse message
+}
 
 @implementation FPAppDelegate
 
@@ -30,7 +38,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // initialize mo_net
-//    [self initMoNet];
+    [self initMoNet];
     
     maxTabs = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 5 : 8;
     
@@ -96,7 +104,7 @@
     }
     [vcArray addObject:vc];
     
-    vc.title = @"Menu";
+    vc.title = @"New";
     vc.delegate = self;
     
     self.tabBarController.viewControllers = [NSArray arrayWithArray:vcArray];
@@ -121,7 +129,7 @@
     vc.nodeId = [[ServerData sharedInstance] getNewNodeId];
     vc.title = [NSString stringWithFormat:@"%@: %d", synthDefName, vc.nodeId];
     vc.synthFile = xmlFile;
-//    vc.delegate = self;
+    vc.delegate = self;
     
     // add new tab
     NSMutableArray* vcArray = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
@@ -130,16 +138,55 @@
     self.tabBarController.viewControllers = [NSArray arrayWithArray:vcArray];
 }
 
-//- (void) initMoNet
-//{
-//    // print out the IP of the device
+- (void) closeSynthTab:(NSUInteger)nodeId
+{
+    // find tab to close
+    NSMutableArray* vcArray = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
+    
+    for (UIViewController* vc in vcArray) {
+        if ([vc isKindOfClass:[SynthViewController class]]) {
+            SynthViewController* svc = (SynthViewController*) vc;
+            
+            if (svc.nodeId == nodeId) {
+                [vcArray removeObject:svc];
+                
+                // move out of view then delete
+                [UIView animateWithDuration:0.5 
+                                 animations:^{
+                                     
+                                     svc.view.frame = CGRectMake(
+                                                                 0, 
+                                                                 svc.view.frame.size.height, 
+                                                                 svc.view.frame.size.width, 
+                                                                 svc.view.frame.size.height
+                                                                 );
+                                 }
+                                 completion:^(BOOL finished){
+                                     
+                                     self.tabBarController.viewControllers = [NSArray arrayWithArray:vcArray];
+                                 }];
+                
+                return;
+            }
+        }
+    }
+    
+}
+
+- (void) initMoNet
+{
+    // print out the IP of the device
 //    NSLog(@"IP: %s", MoNet::getMyIPaddress().c_str());
-//    
-//    // TODO: add patterns to listen for
-//    std::string pattern("/ding");
-//    MoNet::addAddressCallback( pattern, &monetCallback );
-//    MoNet::setListeningPort(SC_PORT_FROM);
-//    MoNet::startListening();
-//}
+    
+    // TODO: add patterns to listen for
+    std::string done("/done");
+    MoNet::addAddressCallback( done, &doneCallback );
+    
+    std::string fail("/fail");
+    MoNet::addAddressCallback( fail, &failCallback );
+    
+    MoNet::setListeningPort([ServerData sharedInstance].inPort);
+    MoNet::startListening();
+}
 
 @end

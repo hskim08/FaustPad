@@ -32,8 +32,7 @@
         // load and parse the xml file
         _tbXml = [TBXML tbxmlWithURL:xmlUrl];
         [self parseFaustElement:_tbXml.rootXMLElement];
-        
-//        [self traverseElement:tbXml.rootXMLElement];
+//        [self traverseElement:_tbXml.rootXMLElement];
     }
     
     return self;
