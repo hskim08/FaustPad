@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) NSArray* componentSet;
 @property (nonatomic, strong) NSArray* viewSet;
+@property (nonatomic, strong) NSString* name;
 
 - (id) initWithUrl:(NSURL*)xmlUrl view:(UIView*)view node:(NSUInteger)nodeId;
 

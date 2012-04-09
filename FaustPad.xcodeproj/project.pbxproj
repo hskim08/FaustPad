@@ -406,7 +406,7 @@
 		AA1AE5EF144BBD7F008C4859 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Stanford University";
 			};
 			buildConfigurationList = AA1AE5F2144BBD7F008C4859 /* Build configuration list for PBXProject "FaustPad" */;

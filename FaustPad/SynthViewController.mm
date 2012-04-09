@@ -55,7 +55,7 @@
     [self.scrollView bringSubviewToFront:closeButton];
     
     // create synth, assuming SynthDefs are loaded
-    NSString* synthDefName = [[synthFile componentsSeparatedByString:@"."] objectAtIndex:0];
+    NSString* synthDefName = dspXmlParser.name;//[[synthFile componentsSeparatedByString:@"."] objectAtIndex:0];
     //[[[synthFile componentsSeparatedByString:@"."] objectAtIndex:0] capitalizedString];
     
     // hide view

@@ -17,6 +17,7 @@
 
 @synthesize componentSet;
 @synthesize viewSet;
+@synthesize name;
 
 
 - (id) initWithUrl:(NSURL*)xmlUrl view:(UIView *)view node:(NSUInteger)ni {
@@ -48,8 +49,12 @@
     TBXMLElement* child = element->firstChild;
     
     do {
-        
-        if ( [[TBXML elementName:child] isEqualToString:@"ui"] ) [self parseUiElement:child];
+        if ( [[TBXML elementName:child] isEqualToString:@"name"] ) { // parse name
+            
+            NSString* nameElement = [TBXML textForElement:child];
+            name = [NSString stringWithFormat:@"faust%@", [nameElement stringByReplacingOccurrencesOfString:@" " withString:@""]];
+        }
+        else if ( [[TBXML elementName:child] isEqualToString:@"ui"] ) [self parseUiElement:child];
         
     } while ( (child = child->nextSibling) );
 }
