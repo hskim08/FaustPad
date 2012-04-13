@@ -57,6 +57,9 @@
     
     // initialize synth button. TODO: handle empty case
     [synthButton setTitle:[fileList objectAtIndex:0] forState:UIControlStateNormal];
+    
+    // load server settings
+    [[ServerData sharedInstance] loadData];
 }
 
 - (void)viewDidUnload
@@ -90,6 +93,8 @@
         
         [ServerData sharedInstance].inPort = textField.text.intValue;
     }
+    
+    [[ServerData sharedInstance] saveData];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -210,6 +215,12 @@
 {
     UIView* view = settingsView;
     if (show) { // show
+        
+        // update state from ServerData
+        ipText.text = [ServerData sharedInstance].serverIp;
+        iPortText.text = [NSString stringWithFormat:@"%d", [ServerData sharedInstance].inPort] ;
+        oPortText.text = [NSString stringWithFormat:@"%d", [ServerData sharedInstance].outPort] ;
+        
         // move picker to lowest position and show
         view.frame = CGRectMake(
                                 0, 

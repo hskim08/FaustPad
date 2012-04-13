@@ -16,6 +16,7 @@
 		AA1AE610144BBD80008C4859 /* FPViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE60F144BBD80008C4859 /* FPViewController.mm */; };
 		AA1AE613144BBD80008C4859 /* FPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AE611144BBD80008C4859 /* FPViewController.xib */; };
 		AA1AE620144BE398008C4859 /* DspXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1AE61F144BE398008C4859 /* DspXmlParser.m */; };
+		AA1DD7E915337A8700810CE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1DD7E815337A8700810CE7 /* CoreData.framework */; };
 		AA570D9714C61D5600B84379 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = AA570D9614C61D5600B84379 /* close.png */; };
 		AA5A5728145E4C510039B313 /* mo_net.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA5A5725145E4C510039B313 /* mo_net.mm */; };
 		AA5A5742145E4C700039B313 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5A572C145E4C700039B313 /* IpEndpointName.cpp */; };
@@ -72,6 +73,7 @@
 		AA1AE612144BBD80008C4859 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPViewController.xib; sourceTree = "<group>"; };
 		AA1AE61E144BE398008C4859 /* DspXmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DspXmlParser.h; sourceTree = "<group>"; };
 		AA1AE61F144BE398008C4859 /* DspXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DspXmlParser.m; sourceTree = "<group>"; };
+		AA1DD7E815337A8700810CE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AA570D9614C61D5600B84379 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		AA5A5724145E4C510039B313 /* mo_net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_net.h; path = Ext/Momu/mo_net.h; sourceTree = "<group>"; };
 		AA5A5725145E4C510039B313 /* mo_net.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_net.mm; path = Ext/Momu/mo_net.mm; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				AA1AE5FD144BBD80008C4859 /* UIKit.framework in Frameworks */,
 				AA1AE5FF144BBD80008C4859 /* Foundation.framework in Frameworks */,
 				AA1AE601144BBD80008C4859 /* CoreGraphics.framework in Frameworks */,
+				AA1DD7E915337A8700810CE7 /* CoreData.framework in Frameworks */,
 				AADA6B1014BB9C6E00A2CFAD /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +180,7 @@
 		AA1AE5FB144BBD80008C4859 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA1DD7E815337A8700810CE7 /* CoreData.framework */,
 				AADA6B0F14BB9C6E00A2CFAD /* QuartzCore.framework */,
 				AA1AE5FC144BBD80008C4859 /* UIKit.framework */,
 				AA1AE5FE144BBD80008C4859 /* Foundation.framework */,

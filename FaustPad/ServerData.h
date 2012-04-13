@@ -23,6 +23,9 @@
 
 + (ServerData *)sharedInstance;
 
+- (void)saveData;
+- (void)loadData;
+
 - (NSUInteger) getNewNodeId;
 
 @end

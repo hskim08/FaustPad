@@ -23,6 +23,7 @@
 @interface FPAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, MenuTabDelegate, SynthTabDelegate> {
     NSUInteger maxTabs;
 }
+
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
