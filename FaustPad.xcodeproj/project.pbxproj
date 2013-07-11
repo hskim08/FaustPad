@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8042A7A0178E929D003BEB3E /* FPUICheckbox.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8042A79E178E929D003BEB3E /* FPUICheckbox.mm */; };
 		AA1AE5FD144BBD80008C4859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1AE5FC144BBD80008C4859 /* UIKit.framework */; };
 		AA1AE5FF144BBD80008C4859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1AE5FE144BBD80008C4859 /* Foundation.framework */; };
 		AA1AE601144BBD80008C4859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1AE600144BBD80008C4859 /* CoreGraphics.framework */; };
@@ -58,6 +59,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8042A79E178E929D003BEB3E /* FPUICheckbox.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FPUICheckbox.mm; path = "UI Components/FPUICheckbox.mm"; sourceTree = "<group>"; };
+		8042A79F178E929D003BEB3E /* FPUICheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPUICheckbox.h; path = "UI Components/FPUICheckbox.h"; sourceTree = "<group>"; };
 		AA1AE5F8144BBD80008C4859 /* FaustPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaustPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1AE5FC144BBD80008C4859 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA1AE5FE144BBD80008C4859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -306,6 +309,8 @@
 		AA8C16DC1455FB30000D64D9 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				8042A79E178E929D003BEB3E /* FPUICheckbox.mm */,
+				8042A79F178E929D003BEB3E /* FPUICheckbox.h */,
 				AA8C16DD1456018B000D64D9 /* FPUIComponent.h */,
 				AA8C16DE1456018B000D64D9 /* FPUIComponent.mm */,
 				AA8C16E0145601FD000D64D9 /* FPUIHSlider.h */,
@@ -487,6 +492,7 @@
 				AA960E6714BE66410027D8FB /* MainViewController.m in Sources */,
 				AA960E7814BE98F80027D8FB /* SynthViewController.mm in Sources */,
 				AA8152AA14BEA2220044448A /* FormattedNSLogger.m in Sources */,
+				8042A7A0178E929D003BEB3E /* FPUICheckbox.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

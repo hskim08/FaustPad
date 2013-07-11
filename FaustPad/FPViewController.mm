@@ -76,15 +76,17 @@
     // create synth, assuming SynthDefs are loaded
     // send OSC message
     char types[2] = {'s', 'i'};
-    MoNet::sendMessage( 
-                       std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
-                       SC_PORT_TO, 
-                       std::string("/s_new"), 
-                       types, 
-                       2,
-                       [synthDefName cStringUsingEncoding:NSUTF8StringEncoding],
-                       [ServerData sharedInstance].nodeAssign
-                       );
+    if ([ServerData sharedInstance].serverIp) {
+      MoNet::sendMessage( 
+			 std::string([[ServerData sharedInstance].serverIp cStringUsingEncoding:NSUTF8StringEncoding]), 
+			 SC_PORT_TO, 
+			 std::string("/s_new"), 
+			 types, 
+			 2,
+			 [synthDefName cStringUsingEncoding:NSUTF8StringEncoding],
+			 [ServerData sharedInstance].nodeAssign
+			  );
+    }
 }
 
 - (void)viewDidUnload

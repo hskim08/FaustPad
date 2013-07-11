@@ -33,6 +33,7 @@
 
 #import "FPUIHSlider.h"
 #import "FPUIButton.h"
+#import "FPUICheckbox.h"
 #import "FPUINumEntry.h"
 
 
@@ -115,6 +116,10 @@
         
         [self parseWidgetElement:widget];
     } while ( (widget = widget->nextSibling) );
+
+    if (_widgetArray.count < activeCount) {
+      NSLog(@"Expected count =  %d but only created %d widgets", activeCount, _widgetArray.count);
+    }
 }
 
 
@@ -132,20 +137,27 @@
     UIView* widget = [self createWidget:typeString withId:idInt withProperties:element->firstChild];
     
     if (widget) {
-        
         [_widgetArray addObject:widget];
         NSLog(@"array size: %d", _widgetArray.count);
+    } else {
+        NSLog(@"unsupported widget type %@", typeString);
     }
     
 }
-
 
 // creates a widget
 - (UIView*) createWidget:(NSString*)type withId:(NSInteger)cid withProperties:(TBXMLElement*)element
 {
     if ( [type isEqualToString:@"hslider"] ) return [self createHSlider:element withId:cid];
+    else if ( [type isEqualToString:@"vslider"] ) return [self createVSlider:element withId:cid];
+    else if ( [type isEqualToString:@"hbargraph"] ) return [self createHSlider:element withId:cid];
+    else if ( [type isEqualToString:@"vbargraph"] ) return [self createVSlider:element withId:cid];
     else if ( [type isEqualToString:@"button"] ) return [self createButton:element withId:cid];
+    else if ( [type isEqualToString:@"checkbox"] ) return [self createCheckbox:element withId:cid];
     else if ( [type isEqualToString:@"nentry"] ) return [self createNEntry:element withId:cid];
+    else {
+        NSLog(@"*** unrecognized widget type %@", type);
+    }
     return nil;
 }
 
@@ -179,6 +191,37 @@
     return slider;
 }
 
+// creates a vslider
+- (UIView*) createVSlider:(TBXMLElement*)element withId:(NSInteger)cid
+{
+  // FIXME
+  NSLog(@"*** vslider converted to hslider");
+
+    // create slider
+    FPUIHSlider* slider = [[FPUIHSlider alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+    slider.nodeId = nodeId;
+    
+    // set values
+    TBXMLElement* label = element;
+    TBXMLElement* varname = label->nextSibling;
+    TBXMLElement* initValue = varname->nextSibling;
+    TBXMLElement* minValue = initValue->nextSibling;
+    TBXMLElement* maxValue = minValue->nextSibling;
+//    TBXMLElement* stepValue = maxValue->nextSibling;
+    
+    slider.cid = cid;
+    slider.label = [TBXML textForElement:label];
+    slider.varname = [TBXML textForElement:varname];
+    
+    [slider setMin:[TBXML textForElement:minValue].doubleValue 
+               max:[TBXML textForElement:maxValue].doubleValue];
+    slider.slider.value = [TBXML textForElement:initValue].doubleValue;
+    
+    NSLog(@"Created hslider(%@, %d) with (min/max/val): %.2f/%.2f/%.2f", 
+          slider.label, cid, slider.slider.minimumValue, slider.slider.maximumValue, slider.slider.value);
+    
+    return slider;
+}
 
 // creates a button
 - (UIView*) createButton:(TBXMLElement*)element withId:(NSInteger)cid
@@ -196,6 +239,24 @@
     NSLog(@"Created button(%@, %d)", button.label, cid);
     
     return button;
+}
+
+// creates a checkbox
+- (UIView*) createCheckbox:(TBXMLElement*)element withId:(NSInteger)cid
+{
+    FPUICheckbox* checkbox = [[FPUICheckbox alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    checkbox.nodeId = nodeId;
+    
+    TBXMLElement* label = element;
+    TBXMLElement* varname = label->nextSibling;
+
+    checkbox.cid = cid;
+    checkbox.label = [TBXML textForElement:label];
+    checkbox.varname = [TBXML textForElement:varname];
+    
+    NSLog(@"Created checkbox(%@, %d)", checkbox.label, cid);
+    
+    return checkbox;
 }
 
 
@@ -318,9 +379,12 @@
     NSInteger cid = [TBXML attributeValue:element->firstAttribute].integerValue;
     
     NSLog(@"Adding widget # %d", cid);
-    FPUIComponent* component = [_widgetArray objectAtIndex:(cid-1)];
-    
-    [parent addComponent:component];
+    if ( cid > _widgetArray.count ) {
+      NSLog(@"*** INSUFFICIENT array size: %d", _widgetArray.count);
+    } else {
+      FPUIComponent* component = [_widgetArray objectAtIndex:(cid-1)];
+      [parent addComponent:component];
+    }
 }
 
 

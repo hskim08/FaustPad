@@ -61,6 +61,8 @@
 
 - (UIView*) createWidget:(NSString*)type withId:(NSInteger)cid withProperties:(TBXMLElement*)element;
 - (UIView*) createHSlider:(TBXMLElement*)element withId:(NSInteger)cid;
+- (UIView*) createVSlider:(TBXMLElement*)element withId:(NSInteger)cid;
+- (UIView*) createCheckbox:(TBXMLElement*)element withId:(NSInteger)cid;
 - (UIView*) createButton:(TBXMLElement*)element withId:(NSInteger)cid;
 - (UIView*) createNEntry:(TBXMLElement*)element withId:(NSInteger)cid;
 
